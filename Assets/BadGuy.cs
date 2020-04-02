@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class BadGuy : MonoBehaviour
 {
@@ -11,14 +12,18 @@ public class BadGuy : MonoBehaviour
     RaycastHit hit;
 
     public Transform ts;
+
+    public Transform target;
+    //NavMeshAgent nav;
     void Start()
     {
-
+        //nav = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        //nav.SetDestination(target.position);
         //AimAt(player.transform.position);
         //if (Input.GetMouseButtonDown(0))
         //{
@@ -35,7 +40,7 @@ public class BadGuy : MonoBehaviour
             Vector3 a2 = player.position;
             RaycastHit2D h = Physics2D.Linecast(a1, a2);
             //RaycastHit2D h = Physics2D.Raycast(p1, (p2 - p1), (p2 - p1).magnitude);
-            Debug.Log(a1 + " -> " + a2 + " = " + h.collider);
+            //Debug.Log(a1 + " -> " + a2 + " = " + h.collider);
 
             if (h.collider.tag == "Player")
             {
@@ -63,7 +68,7 @@ public class BadGuy : MonoBehaviour
         Vector3 a2 = player.position;
         RaycastHit2D h = Physics2D.Linecast(a1, a2);
         //RaycastHit2D h = Physics2D.Raycast(p1, (p2 - p1), (p2 - p1).magnitude);
-        Debug.Log(a1 + " -> " + a2 + " = " + h.collider);
+        //Debug.Log(a1 + " -> " + a2 + " = " + h.collider);
 
         if (h.collider.tag == "Player")
         {

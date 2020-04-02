@@ -8,8 +8,10 @@ public class Attack : MonoBehaviour
     public Transform ts;
     public GameObject weapon;
     public Camera mainCamera;
+    public GameObject bullet;
     public int fireMode = 0;
     private Vector3 LastMousePos;
+    public float demageScale = 1;
     void Start()
     {
         weapon.transform.Rotate(new Vector3(0, 0, 1), 90);
@@ -25,9 +27,27 @@ public class Attack : MonoBehaviour
 
     private void Update()
     {
-        //if (fireMode == 1)
-        //{ if (Input.GetMouseButtonDown(0)) Shoot(); }
+        if (fireMode == 1)
+        { if (Input.GetMouseButtonDown(0)) Shoot(); }
     }
+
+    public void Shoot()
+    {
+        //ha.DecreaseHealth(10);
+        GameObject newbullet = Instantiate(bullet, ts.position, ts.rotation);
+        //newbullet.GetComponent<Bullet>().bulletDamage *= demageScale;
+        //newbullet.GetComponent<Bullet>().healthTaken = 10;
+        //newbullet.GetComponent<Bullet>().bulletDamage *= demageScale;
+        //GetComponent<Rigidbody2D>().AddForce(Knockback(ts.position) * 70);
+        newbullet.GetComponent<Bullet>().Bullet1(/*V2targ(mainCamera.ScreenToWorldPoint(Input.mousePosition))*/);
+        //newbullet.GetComponent<Bullet>().Bu
+    }
+
+    //private Vector2 Knockback(Vector2 target)
+    //{
+    //    return new Vector2(transform.position.x - target.x, transform.position.y - target.y);
+
+    //}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
