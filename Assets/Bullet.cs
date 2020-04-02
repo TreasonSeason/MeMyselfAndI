@@ -45,6 +45,7 @@ public class Bullet : MonoBehaviour
         {
             BadGuy temp = collision.gameObject.GetComponent<BadGuy>();
             DestroyTime();
+            temp.DecreaseHealth(bulletDamage);
             //if (bulletDamage > collision.gameObject.GetComponent<BadGuy>().health)
             //{
             //    bulletDamage -= temp.health;

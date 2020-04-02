@@ -2867,7 +2867,7 @@ MonoBehaviour:
   player: {fileID: 1704209741}
   maxRange: 15
   ts: {fileID: 1257699339}
-  target: {fileID: 1704209741}
+  target: {fileID: 0}
 --- !u!212 &549730078
 SpriteRenderer:
   m_ObjectHideFlags: 0

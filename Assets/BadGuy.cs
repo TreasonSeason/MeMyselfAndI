@@ -10,6 +10,7 @@ public class BadGuy : MonoBehaviour
     public Transform player;
     public float maxRange = 5f;
     RaycastHit hit;
+    public float health = 100f;
 
     public Transform ts;
 
@@ -49,6 +50,12 @@ public class BadGuy : MonoBehaviour
             }
 
         }
+    }
+    public void DecreaseHealth(float amount)
+    {
+        health -= amount;
+        if(health <= 0)
+            Object.Destroy(gameObject);
     }
 
     public void AimAt(Vector2 target)
