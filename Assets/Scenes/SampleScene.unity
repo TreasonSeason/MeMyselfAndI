@@ -2808,15 +2808,16 @@ GameObject:
   - component: {fileID: 549730077}
   - component: {fileID: 549730076}
   - component: {fileID: 549730075}
+  - component: {fileID: 549730080}
   m_Layer: 10
-  m_Name: Charged
+  m_Name: Wraith
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!58 &549730075
-CircleCollider2D:
+--- !u!70 &549730075
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2828,9 +2829,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.11
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.24, y: 0.45}
+  m_Direction: 0
 --- !u!50 &549730076
 Rigidbody2D:
   serializedVersion: 4
@@ -2908,7 +2909,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 83b0928a485d5a449a0edc74451a638a, type: 3}
+  m_Sprite: {fileID: -1364186699980225264, guid: 2183a9df0ea68074f8cefc8c3b6d8f4c,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2934,6 +2936,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &549730080
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549730074}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9c518a09e97167d449761a6d6b83b6d6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &578572756
 GameObject:
   m_ObjectHideFlags: 0
@@ -3788,6 +3809,7 @@ GameObject:
   - component: {fileID: 851472947}
   - component: {fileID: 851472946}
   - component: {fileID: 851472945}
+  - component: {fileID: 851472949}
   m_Layer: 0
   m_Name: BombSprite
   m_TagString: Item
@@ -3903,6 +3925,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &851472949
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851472944}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3d0c69a713b338344ae5efce02ac7c6e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &900849210
 GameObject:
   m_ObjectHideFlags: 0

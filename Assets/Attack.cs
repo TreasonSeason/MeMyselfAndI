@@ -34,38 +34,11 @@ public class Attack : MonoBehaviour
     private void Update()
     {
         if (fireMode == 1)
-        { if (Input.GetMouseButtonDown(0)) Shoot(); }
+        if (Input.GetMouseButtonDown(0))
+                Shoot(); 
         if (fireMode == 2)
-        {
             if (Input.GetMouseButtonDown(0) && canAttack)
-            {
-                canAttack = false;
-                weapon.GetComponent<Transform>().Rotate(0, 0, -30);
-                Invoke("swordDelay", attackDelay);
-                Collider2D[] enemies = Physics2D.OverlapCircleAll(weapon.transform.position, attackRange, whatisEnemy);
-                for (int i = 0; i < enemies.Length; i++)
-                {
-                    enemies[i].GetComponent<BadGuy>().DecreaseHealth(swordDamage);
-                }
-            }
-            //if (timeBtwAttack <= 0)
-            //{
-            //    Debug.Log("Can" + timeBtwAttack);
-            //    if (Input.GetMouseButtonDown(0))
-            //    {
-            //        Debug.Log("Attacked");
-            //        //weapon.GetComponent<WeaponBehaviour>().shake();
-            //        //weapon.transform.position.x = Mathf.Sin(Time.time * 1) * 1;
-
-
-            //    }
-            //    timeBtwAttack = startTimeBtwAttack;
-            //}
-            //else
-            //{
-            //    timeBtwAttack -= Time.deltaTime;
-            //}
-        }
+                Swing();
     }
     void swordDelay()
     {
@@ -75,14 +48,20 @@ public class Attack : MonoBehaviour
 
     public void Shoot()
     {
-        //ha.DecreaseHealth(10);
         GameObject newbullet = Instantiate(bullet, ts.position, ts.rotation);
-        //newbullet.GetComponent<Bullet>().bulletDamage *= demageScale;
-        //newbullet.GetComponent<Bullet>().healthTaken = 10;
-        //newbullet.GetComponent<Bullet>().bulletDamage *= demageScale;
-        //GetComponent<Rigidbody2D>().AddForce(Knockback(ts.position) * 70);
-        newbullet.GetComponent<Bullet>().Bullet1(/*V2targ(mainCamera.ScreenToWorldPoint(Input.mousePosition))*/);
-        //newbullet.GetComponent<Bullet>().Bu
+        newbullet.GetComponent<Bullet>().Bullet1();
+    }
+
+    public void Swing()
+    {
+        canAttack = false;
+        weapon.GetComponent<Transform>().Rotate(0, 0, -30);
+        Invoke("swordDelay", attackDelay);
+        Collider2D[] enemies = Physics2D.OverlapCircleAll(weapon.transform.position, attackRange, whatisEnemy);
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            enemies[i].GetComponent<BadGuy>().DecreaseHealth(swordDamage);
+        }
     }
 
     //private Vector2 Knockback(Vector2 target)
