@@ -9,9 +9,15 @@ public class Attack : MonoBehaviour
     public GameObject weapon;
     public Camera mainCamera;
     public GameObject bullet;
-    public int fireMode = 0;
+    private int fireMode = 0;
     private Vector3 LastMousePos;
     public float demageScale = 1;
+    
+    public float attackRange;
+    public LayerMask whatisEnemy;
+    public float swordDamage;
+    public float attackDelay = 0.3f;
+    private bool canAttack = true;
     void Start()
     {
         weapon.transform.Rotate(new Vector3(0, 0, 1), 90);
@@ -22,25 +28,40 @@ public class Attack : MonoBehaviour
     {
         AimAt(mainCamera.ScreenToWorldPoint(Input.mousePosition));
         //Cia dar kazkas?
-        
+
     }
 
     private void Update()
     {
         if (fireMode == 1)
-        { if (Input.GetMouseButtonDown(0)) Shoot(); }
+        if (Input.GetMouseButtonDown(0))
+                Shoot(); 
+        if (fireMode == 2)
+            if (Input.GetMouseButtonDown(0) && canAttack)
+                Swing();
+    }
+    void swordDelay()
+    {
+        canAttack = true;
+        weapon.GetComponent<Transform>().Rotate(0, 0, 30);
     }
 
     public void Shoot()
     {
-        //ha.DecreaseHealth(10);
         GameObject newbullet = Instantiate(bullet, ts.position, ts.rotation);
-        //newbullet.GetComponent<Bullet>().bulletDamage *= demageScale;
-        //newbullet.GetComponent<Bullet>().healthTaken = 10;
-        //newbullet.GetComponent<Bullet>().bulletDamage *= demageScale;
-        //GetComponent<Rigidbody2D>().AddForce(Knockback(ts.position) * 70);
-        newbullet.GetComponent<Bullet>().Bullet1(/*V2targ(mainCamera.ScreenToWorldPoint(Input.mousePosition))*/);
-        //newbullet.GetComponent<Bullet>().Bu
+        newbullet.GetComponent<Bullet>().Bullet1();
+    }
+
+    public void Swing()
+    {
+        canAttack = false;
+        weapon.GetComponent<Transform>().Rotate(0, 0, -30);
+        Invoke("swordDelay", attackDelay);
+        Collider2D[] enemies = Physics2D.OverlapCircleAll(weapon.transform.position, attackRange, whatisEnemy);
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            enemies[i].GetComponent<BadGuy>().DecreaseHealth(swordDamage);
+        }
     }
 
     //private Vector2 Knockback(Vector2 target)
@@ -57,6 +78,8 @@ public class Attack : MonoBehaviour
             weapon.GetComponent<SpriteRenderer>().color = collision.gameObject.GetComponent<SpriteRenderer>().color;
             if (collision.gameObject.name.Contains("semiFire"))
                 fireMode = 1;
+            if (collision.gameObject.name.Contains("sword"))
+                fireMode = 2;
         }
     }
 
@@ -92,5 +115,10 @@ public class Attack : MonoBehaviour
     private Vector2 V2targ(Vector2 target)
     {
         return new Vector2(target.x - transform.position.x, target.y - transform.position.y);
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(weapon.transform.position, attackRange);
     }
 }

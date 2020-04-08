@@ -15,6 +15,9 @@ public class BadGuy : MonoBehaviour
     public Transform ts;
 
     public Transform target;
+
+    private bool shake;
+    private bool up;
     //NavMeshAgent nav;
     void Start()
     {
@@ -45,17 +48,40 @@ public class BadGuy : MonoBehaviour
 
             if (h.collider.tag == "Player")
             {
-                transform.Rotate(0, 0, 10);
+                //transform.Rotate(0, 0, 10);
                 //Ka daro kai pamato
             }
 
         }
+        //var a = transform.position.x;
+        if (shake)
+            Shake();
+            //transform.position = Random.insideUnitCircle * (float)0.05;
     }
     public void DecreaseHealth(float amount)
     {
         health -= amount;
-        if(health <= 0)
+        if (health <= 0)
             Object.Destroy(gameObject);
+        shake = true;
+        Invoke("shakeTime", (float)0.2);
+    }
+    public void shakeTime()
+    {
+        shake = false;
+    }
+    private void Shake()
+    {
+        if (up)
+        {
+            transform.Translate(0, 0.2f, 0);
+            up = false;
+        }
+        else
+        {
+            transform.Translate(0, -0.2f, 0);
+            up = true;
+        }
     }
 
     public void AimAt(Vector2 target)
@@ -69,7 +95,7 @@ public class BadGuy : MonoBehaviour
         float totalAngle = Mathf.DeltaAngle(pointAngle, dirAngle);
 
         ts.RotateAround(transform.position, new Vector3(0, 0, 1), totalAngle);
-        
+
 
         Vector3 a1 = ts.position;
         Vector3 a2 = player.position;
