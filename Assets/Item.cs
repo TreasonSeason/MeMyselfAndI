@@ -10,13 +10,44 @@ public class Item : MonoBehaviour
     public string description;
     public Sprite icon;
     public bool pickedUp;
+
+    [HideInInspector]
     public bool equipped;
+
+    [HideInInspector]
+    public GameObject armour;
+
+    [HideInInspector]
+    public GameObject armourManager;
+
+    public bool playerArmour;
+
+    public void Start()
+    {
+        armourManager = GameObject.FindWithTag("ArmourManager");
+        //healthbar = GameObject.fin
+        if(!playerArmour)
+        {
+            int allArmour = armourManager.transform.childCount;
+            for (int i = 0; i < allArmour; i++)
+            {
+                if(armourManager.transform.GetChild(i).gameObject.GetComponent<Item>().ID == ID)
+                {
+                    armour = armourManager.transform.GetChild(i).gameObject;
+                }
+            }
+        }
+    }
 
     public void Update()
     {
         if(equipped)
         {
             //perform
+            if (Input.GetKeyDown(KeyCode.O))
+                equipped = false;
+            if (equipped == false)
+                this.gameObject.SetActive(false);
         }
     }
     public void ItemUsage()
@@ -28,7 +59,15 @@ public class Item : MonoBehaviour
         }
 
         //armor
-
+        if (type == "Armour")
+        {
+            armour.SetActive(true);
+            armour.GetComponent<Item>().equipped = true;
+        }
         //consumables
+        if (type == "Potion")
+        {
+           // 
+        }
     }
 }

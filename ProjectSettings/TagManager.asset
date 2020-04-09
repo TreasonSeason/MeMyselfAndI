@@ -8,6 +8,7 @@ TagManager:
   - Pickable
   - World
   - Item
+  - ArmourManager
   layers:
   - Default
   - TransparentFX
