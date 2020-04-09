@@ -20,6 +20,9 @@ public class Item : MonoBehaviour
     [HideInInspector]
     public GameObject armourManager;
 
+    [HideInInspector]
+    public GameObject player;
+
     public bool playerArmour;
 
     public void Start()
@@ -67,7 +70,8 @@ public class Item : MonoBehaviour
         //consumables
         if (type == "Potion")
         {
-           // 
+            player = GameObject.FindWithTag("Player");
+            player.SendMessage("HealDamage", 20);
         }
     }
 }
