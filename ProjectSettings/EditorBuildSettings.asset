@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainSpawnKlaustukas.unity
+    guid: d5327898fb0ec39468e92f21d64c07da
+  - enabled: 1
+    path: Assets/Scenes/Level_Select.unity
+    guid: a17650bf6957685419768f6fb86e08f1
+  - enabled: 1
+    path: Assets/Scenes/Icey.unity
+    guid: 61f8967180fd0254dab70cafe9562ce1
+  - enabled: 1
+    path: Assets/Scenes/Mars.unity
+    guid: 095d08cab21c9e04c9aa01a6c3c6131d
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
