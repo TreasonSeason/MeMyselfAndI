@@ -9979,7 +9979,7 @@ MonoBehaviour:
   ts: {fileID: 29283128}
   weapon: {fileID: 1662371983}
   mainCamera: {fileID: 519420031}
-  bullet: {fileID: 0}
+  bullet: {fileID: 1713154824227157459, guid: 8fc27d01d406b914a891c8afa7c7f6ec, type: 3}
   demageScale: 1
   attackRange: 0.6
   whatisEnemy:
@@ -11319,7 +11319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39c0769401985514b9722f1536584f3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leveltoLoad: 0
+  leveltoLoad: 1
 --- !u!19719996 &1983302716
 TilemapCollider2D:
   m_ObjectHideFlags: 0

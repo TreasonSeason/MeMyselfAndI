@@ -457,6 +457,7 @@ MonoBehaviour:
   equipped: 0
   armour: {fileID: 0}
   armourManager: {fileID: 0}
+  player: {fileID: 0}
   playerArmour: 1
 --- !u!212 &231246339
 SpriteRenderer:
@@ -122903,6 +122904,7 @@ MonoBehaviour:
   equipped: 0
   armour: {fileID: 0}
   armourManager: {fileID: 0}
+  player: {fileID: 0}
   playerArmour: 0
 --- !u!212 &1175264730
 SpriteRenderer:
@@ -124540,6 +124542,7 @@ MonoBehaviour:
   equipped: 0
   armour: {fileID: 0}
   armourManager: {fileID: 0}
+  player: {fileID: 0}
   playerArmour: 0
 --- !u!212 &1687161364
 SpriteRenderer:
@@ -126121,7 +126124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39c0769401985514b9722f1536584f3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leveltoLoad: 0
+  leveltoLoad: 1
 --- !u!1 &2084860860
 GameObject:
   m_ObjectHideFlags: 0
