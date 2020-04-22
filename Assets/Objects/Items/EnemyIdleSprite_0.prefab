@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8afb43f6beefcf141bebfb42e34ebdbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 3
+  ID: 4
   type: Potion
   description: eat it, I heard it heals ya mate
   icon: {fileID: 21300000, guid: 86ce912717672b8429c58e6960c12e25, type: 3}

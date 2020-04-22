@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8afb43f6beefcf141bebfb42e34ebdbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 0
+  ID: 1
   type: Money
   description: bling bling
   icon: {fileID: 21300000, guid: d235556d311cd497b993de7aa11961d4, type: 3}
