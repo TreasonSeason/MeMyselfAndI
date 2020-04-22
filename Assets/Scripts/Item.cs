@@ -73,5 +73,10 @@ public class Item : MonoBehaviour
             player = GameObject.FindWithTag("Player");
             player.SendMessage("HealDamage", 20);
         }
+        if (type == "Damage")
+        {
+            player = GameObject.FindWithTag("Player");
+            player.SendMessage("TakeDamage", 20);
+        }
     }
 }
