@@ -30,7 +30,11 @@ public class movement : MonoBehaviour
         }
         else multi = 1;
 
-        animationCheck();
+        //animationCheck();
+
+        anim.SetFloat("moveH", plmovement.x);
+        anim.SetFloat("moveV", plmovement.y);
+        anim.SetFloat("Speed", plmovement.sqrMagnitude);
     }
 
     private void FixedUpdate()

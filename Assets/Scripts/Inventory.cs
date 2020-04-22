@@ -12,7 +12,7 @@ public class Inventory : MonoBehaviour
     private GameObject[] slot;
 
     public GameObject slotHolder;
-
+    
     // Start is called before the first frame update
     void Start()
     {
