@@ -7280,16 +7280,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+<<<<<<< HEAD
     - target: {fileID: 8453669026169265010, guid: efc5e4f368b7c5f46b092f1b2bfc338d,
         type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 6927364598d15f841b04778d7747c83e, type: 2}
+=======
+>>>>>>> a38e42436c737acf0fd0254db49c0d0a71a55bbe
     - target: {fileID: 8453669026169265029, guid: efc5e4f368b7c5f46b092f1b2bfc338d,
         type: 3}
       propertyPath: m_Name
       value: playr
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 8453669026169265029, guid: efc5e4f368b7c5f46b092f1b2bfc338d,
         type: 3}
       propertyPath: m_Layer
@@ -7300,6 +7304,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+=======
+>>>>>>> a38e42436c737acf0fd0254db49c0d0a71a55bbe
     - target: {fileID: 8453669026169265032, guid: efc5e4f368b7c5f46b092f1b2bfc338d,
         type: 3}
       propertyPath: mainCamera
@@ -7380,11 +7386,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 8453669026436776415, guid: efc5e4f368b7c5f46b092f1b2bfc338d,
         type: 3}
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+=======
+>>>>>>> a38e42436c737acf0fd0254db49c0d0a71a55bbe
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efc5e4f368b7c5f46b092f1b2bfc338d, type: 3}
 --- !u!1001 &8516468208235348993
