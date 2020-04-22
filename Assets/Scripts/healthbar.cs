@@ -23,7 +23,7 @@ public class healthbar : MonoBehaviour
         currentHealthBar.rectTransform.localScale = new Vector3(ratio, 1, 1);
         ratioText.text = (ratio*100).ToString("0") + '%';
     }
-    private void TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
         healthPoints = healthPoints - damage;
         if (healthPoints <= 0)
@@ -35,7 +35,7 @@ public class healthbar : MonoBehaviour
         FixedUpdate();
     }
 
-    private void HealDamage(float health)
+    public void HealDamage(float health)
     {
         healthPoints = healthPoints + health;
         if (healthPoints > maxHealthPoints)
