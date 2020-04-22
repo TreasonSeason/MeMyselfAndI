@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour
     {
         Vector2 a = gameObject.transform.up;
         rb.MovePosition(rb.position + a * bulletSpeed * Time.fixedDeltaTime);
-        Physics2D.IgnoreLayerCollision(8, 9);
+        //Physics2D.IgnoreLayerCollision(8, 9);
     }
     void DestroyTime()
     {
@@ -59,6 +59,18 @@ public class Bullet : MonoBehaviour
             //}
             //ha.ManipulateRage(bulletDamage * 0.2f);
             //Debug.Log(temp.GetComponent<BadGuy>().health);
+        }
+        else if (collision.gameObject.tag == "Turret")
+        {
+            Turret temp = collision.gameObject.GetComponent<Turret>();
+            DestroyTime();
+            temp.DecreaseHealth(bulletDamage);
+        }
+        else if (collision.gameObject.tag == "Player")
+        {
+            healthbar temp = collision.gameObject.GetComponent<healthbar>();
+            DestroyTime();
+            temp.TakeDamage(bulletDamage);
         }
         else if (collision.gameObject.tag == "World" && shot)
         {

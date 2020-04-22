@@ -6,6 +6,7 @@ public class Turret : MonoBehaviour
 {
     // Start is called before the first frame update
     public Transform player;
+    public float health = 200;
     public float maxRange = 10f;
     public float rotateSpeed = 1;
     private Rigidbody2D rb;
@@ -64,12 +65,22 @@ public class Turret : MonoBehaviour
     {
         Vector3 b = rayCastEnd.position;
         RaycastHit2D h2 = Physics2D.Linecast(a1, b);
-        if (h2.collider.tag == "Player")
-        {
-            anim.SetTrigger(shootHash);
-            if (canshoot) /*Shoot();*/
-                Invoke("Shoot", attackDelay);
-            canshoot = false;
-        }
+        if (h2.collider != null)
+            if (h2.collider.tag == "Player")
+            {
+                anim.SetTrigger(shootHash);
+                if (canshoot) /*Shoot();*/
+                    Invoke("Shoot", attackDelay);
+                canshoot = false;
+            }
+    }
+
+    public void DecreaseHealth(float amount)
+    {
+        health -= amount;
+        if (health <= 0)
+            Object.Destroy(gameObject);
+        //shake = true;
+        //Invoke("shakeTime", (float)0.2);
     }
 }

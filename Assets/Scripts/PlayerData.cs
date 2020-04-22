@@ -13,7 +13,7 @@ public class PlayerData
 
     public PlayerData(healthbar healthbar/*, Inventory inventory*/)
     {
-       // Debug.LogError("Tipo toki bando duot " );
+        Debug.Log("Tipo daejo iki cia " );
         healthPoints = healthbar.healthPoints;
     }
 }
