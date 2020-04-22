@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Main_menu.unity
+    guid: 97d045e2f5a0c1c44a8287a6cada08d3
+  - enabled: 1
     path: Assets/Scenes/MainSpawnKlaustukas.unity
     guid: d5327898fb0ec39468e92f21d64c07da
   - enabled: 1

@@ -13,6 +13,13 @@ public class movement : MonoBehaviour
 
     Vector2 plmovement;
 
+    private Animator anim;
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
+
     private void Update()
     {
         plmovement.x = Input.GetAxisRaw("Horizontal");
@@ -22,11 +29,32 @@ public class movement : MonoBehaviour
             multi = multiplier;
         }
         else multi = 1;
+
+        //animationCheck();
+
+        anim.SetFloat("moveH", plmovement.x);
+        anim.SetFloat("moveV", plmovement.y);
+        anim.SetFloat("Speed", plmovement.sqrMagnitude);
     }
 
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + plmovement * moveSpeed * Time.fixedDeltaTime * multi);
+    }
+
+    private void animationCheck()
+    {
+        anim.SetFloat("SpeedH", plmovement.x);
+        anim.SetFloat("SpeedV", plmovement.y);
+        if (plmovement.x == 0 && plmovement.y == 0)
+            anim.SetFloat("Idle", 1);
+        else anim.SetFloat("Idle", 0);
+
+        if (plmovement.x == 0) anim.SetBool("movingH", false);
+        else anim.SetBool("movingH", true);
+
+        if (plmovement.y == 0) anim.SetBool("movingV", false);
+        else anim.SetBool("movingV", true);
     }
 
     //public float speed = 70f;
