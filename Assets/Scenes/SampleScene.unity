@@ -3829,14 +3829,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 7a6f0311e49d0ed4792da0ca67ae1aed,
         type: 2}
-<<<<<<< HEAD
     - target: {fileID: 575778288216841002, guid: efc5e4f368b7c5f46b092f1b2bfc338d,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.1
       objectReference: {fileID: 0}
-=======
->>>>>>> 4bc954df03b3bb955af0da962be552087980e656
     - target: {fileID: 8453669026169265010, guid: efc5e4f368b7c5f46b092f1b2bfc338d,
         type: 3}
       propertyPath: m_Controller

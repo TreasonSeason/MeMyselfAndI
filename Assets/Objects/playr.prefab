@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8afb43f6beefcf141bebfb42e34ebdbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 2
+  ID: 3
   type: Armour
   description: style
   icon: {fileID: 21300000, guid: 5853b6ddaa2b364478a6de1223809f57, type: 3}

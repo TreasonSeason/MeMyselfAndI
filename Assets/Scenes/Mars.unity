@@ -416,6 +416,12 @@ PrefabInstance:
       propertyPath: slotHolder
       value: 
       objectReference: {fileID: 957218557}
+    - target: {fileID: 575778287949381463, guid: efc5e4f368b7c5f46b092f1b2bfc338d,
+        type: 3}
+      propertyPath: ItemDataBase
+      value: 
+      objectReference: {fileID: 11400000, guid: 7a6f0311e49d0ed4792da0ca67ae1aed,
+        type: 2}
     - target: {fileID: 575778287949381468, guid: efc5e4f368b7c5f46b092f1b2bfc338d,
         type: 3}
       propertyPath: m_LocalPosition.x
