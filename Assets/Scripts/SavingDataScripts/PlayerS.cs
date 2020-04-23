@@ -17,7 +17,8 @@ public class PlayerS : MonoBehaviour
         PlayerData data = SaveSystem.LoadPlayer();
 
         bar.healthPoints = data.healthPoints;
-        int[] iteamIDS = data.itemId;
+        //int[] iteamIDS = data.itemId;
+        inv.realoadInventory(data.itemId);
         
        // inv.
     }

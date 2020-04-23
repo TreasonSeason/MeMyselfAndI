@@ -80,7 +80,7 @@ public class Inventory : MonoBehaviour
             }
         }
     }
-    void AddItem( int itemId, string itemType, string itemDescription, Sprite itemIcon)
+   /* void AddItem( int itemId, string itemType, string itemDescription, Sprite itemIcon)
     {
         for (int i = 0; i < allSlots; i++)
         {
@@ -96,7 +96,7 @@ public class Inventory : MonoBehaviour
                 return;
             }
         }
-    }
+    }*/
     public int[] invComp()
     {
         int allSlots = 24;
@@ -108,5 +108,20 @@ public class Inventory : MonoBehaviour
             slotId[i] = slot[i].GetComponent<Slot>().ID;
         }
         return slotId;
+    }
+    public void realoadInventory(int[] ids)
+    {
+        for (int i = 0; i < allSlots; i++)
+        {
+            if (ids[i] != 0)
+            {
+            slot[i].GetComponent<Slot>().icon = ItemDataBase.GetItemCopy(ids[i]).icon;
+            slot[i].GetComponent<Slot>().ID = ItemDataBase.GetItemCopy(ids[i]).ID;
+            slot[i].GetComponent<Slot>().type = ItemDataBase.GetItemCopy(ids[i]).type;
+            slot[i].GetComponent<Slot>().description = ItemDataBase.GetItemCopy(ids[i]).description;
+            slot[i].GetComponent<Slot>().UpdateSlot();
+            slot[i].GetComponent<Slot>().empty = false;
+            }
+        }
     }
 }
