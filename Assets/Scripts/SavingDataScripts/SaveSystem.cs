@@ -6,13 +6,13 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public static class SaveSystem
 {
-    public static void SavePlayer(healthbar bar/*, Inventory inv*/ )
+    public static void SavePlayer(healthbar bar, Inventory inv )
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/player.hope";
         FileStream stream = new FileStream(path, FileMode.Create);
 
-        PlayerData data = new PlayerData(bar/*,inv*/);
+        PlayerData data = new PlayerData(bar,inv);
 
         formatter.Serialize(stream, data);
         stream.Close();

@@ -79,4 +79,9 @@ public class Item : MonoBehaviour
             player.SendMessage("TakeDamage", 20);
         }
     }
+
+    public virtual Item GetCopy()
+    {
+        return this;
+    }
 }
