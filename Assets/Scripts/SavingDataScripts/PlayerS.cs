@@ -9,7 +9,7 @@ public class PlayerS : MonoBehaviour
 
     public void SavePlayer()
     {
-        SaveSystem.SavePlayer(bar/*, inv*/);
+        SaveSystem.SavePlayer(bar, inv);
     }
 
     public void LoadPlayer()
@@ -17,6 +17,15 @@ public class PlayerS : MonoBehaviour
         PlayerData data = SaveSystem.LoadPlayer();
 
         bar.healthPoints = data.healthPoints;
-        //inv.slotHolder = data.slotHolder;
+        int[] iteamIDS = data.itemId;
+        
+       // inv.
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            other.GetComponent<PlayerS>().LoadPlayer();
+        }
     }
 }
