@@ -9,15 +9,22 @@ public class BadGuy : MonoBehaviour
     private Vector3 LastMousePos;
     public Transform player;
     public float maxRange = 5f;
-    RaycastHit hit;
+    //RaycastHit hit;
     public float health = 100f;
+    public float speed = 5;
 
     public Transform ts;
 
-    public Transform target;
+    //public Transform target;
 
     private bool shake;
     private bool up;
+
+    private bool canAttack = true;
+    public float attackDelay = 0.3f;
+    public float attackRange;
+    public LayerMask whatisEnemy;
+    public float attackDamage = 20;
     //NavMeshAgent nav;
     void Start()
     {
@@ -50,6 +57,8 @@ public class BadGuy : MonoBehaviour
             {
                 //transform.Rotate(0, 0, 10);
                 //Ka daro kai pamato
+                AimAt(player.position);
+                transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
             }
 
         }
@@ -96,27 +105,31 @@ public class BadGuy : MonoBehaviour
 
         ts.RotateAround(transform.position, new Vector3(0, 0, 1), totalAngle);
 
-
-        Vector3 a1 = ts.position;
-        Vector3 a2 = player.position;
-        RaycastHit2D h = Physics2D.Linecast(a1, a2);
-        //RaycastHit2D h = Physics2D.Raycast(p1, (p2 - p1), (p2 - p1).magnitude);
-        //Debug.Log(a1 + " -> " + a2 + " = " + h.collider);
-
-        if (h.collider.tag == "Player")
-        {
-            transform.Rotate(0, 0, 10);
-            //Ka daro kai pamato
-        }
-        //weapon.transform.RotateAround(transform.position, new Vector3(0, 0, 1), totalAngle);
-
-        //if (weapon.transform.rotation.z < -0.71 || weapon.transform.rotation.z > 0.71) weapon.GetComponent<SpriteRenderer>().flipY = true;
-        //else weapon.GetComponent<SpriteRenderer>().flipY = false;
-        //ts.RotateAround(transform.position, new Vector3(0, 0, 1), (transform.rotation.y < 0) ? -totalAngle : totalAngle);
+        Collider2D[] enemies = Physics2D.OverlapCircleAll(ts.transform.position, attackRange, whatisEnemy);
+        if (enemies.Length > 0 && canAttack)
+            Swing(enemies[0]);
+    }
+    public void Swing(Collider2D enemy)
+    {
+        canAttack = false;
+        //ts.GetComponent<Transform>().Rotate(0, 0, -30);
+        Invoke("AttackDelay", attackDelay);
+        //Collider2D[] enemies = Physics2D.OverlapCircleAll(ts.transform.position, attackRange, whatisEnemy);
+        enemy.GetComponent<healthbar>().TakeDamage(attackDamage);
+    }
+    void AttackDelay()
+    {
+        canAttack = true;
+        //ts.GetComponent<Transform>().Rotate(0, 0, 30);
     }
 
     private Vector2 V2targ(Vector2 target)
     {
         return new Vector2(target.x - transform.position.x, target.y - transform.position.y);
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(ts.transform.position, attackRange);
     }
 }
