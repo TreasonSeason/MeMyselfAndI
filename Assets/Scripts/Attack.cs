@@ -87,17 +87,6 @@ public class Attack : MonoBehaviour
         }
     }
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if(collision.gameObject.tag == "Pickable")
-    //    {
-    //        weapon.GetComponent<SpriteRenderer>().sprite = collision.gameObject.GetComponent<SpriteRenderer>().sprite;
-    //        weapon.GetComponent<SpriteRenderer>().color = collision.gameObject.GetComponent<SpriteRenderer>().color;
-    //        if (collision.gameObject.name.Contains("semiFire"))
-    //            fireMode = 1;
-    //    }
-    //}
-
     public void AimAt(Vector2 target)
     {
         Vector2 dir = V2targ(target);
