@@ -122,6 +122,15 @@ public class Inventory : MonoBehaviour
             slot[i].GetComponent<Slot>().UpdateSlot();
             slot[i].GetComponent<Slot>().empty = false;
             }
+            else
+            {
+                slot[i].GetComponent<Slot>().icon = null;
+                slot[i].GetComponent<Slot>().ID = 0 ;
+                slot[i].GetComponent<Slot>().type = null;
+                slot[i].GetComponent<Slot>().description = null;
+                slot[i].GetComponent<Slot>().UpdateSlot();
+                slot[i].GetComponent<Slot>().empty = true;
+            }
         }
     }
 }

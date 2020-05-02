@@ -58,7 +58,7 @@ public class BadGuy : MonoBehaviour
                 //transform.Rotate(0, 0, 10);
                 //Ka daro kai pamato
                 AimAt(player.position);
-                transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+                //transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
             }
 
         }
