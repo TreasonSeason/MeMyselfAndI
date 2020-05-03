@@ -214,10 +214,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36355837577420b4b94ee47a23c46d39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 575778287949381468, guid: efc5e4f368b7c5f46b092f1b2bfc338d, type: 3}
   rb: {fileID: 6156912623762783082}
   speed: 5
   nextWaypointDistance: 3
+  follow: 0
 --- !u!114 &2182665859575025549
 MonoBehaviour:
   m_ObjectHideFlags: 0

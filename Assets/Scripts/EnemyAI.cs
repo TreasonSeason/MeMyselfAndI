@@ -13,11 +13,13 @@ public class EnemyAI : MonoBehaviour
 
     Path path;
     int currentWaypoint = 0;
-    bool reachedEndOfPath = false;
+    bool reachedEndOfPath;
 
     Seeker seeker;
 
     public bool follow;
+
+    public Vector2 direction;
 
     // Start is called before the first frame update
     void Start()
@@ -50,7 +52,7 @@ public class EnemyAI : MonoBehaviour
             {
                 reachedEndOfPath = false;
             }
-            Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
+            direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
             rb.MovePosition(rb.position + direction * speed * Time.deltaTime);
             //transform.position = Vector2.MoveTowards(rb.position, direction, speed * Time.deltaTime);
 
@@ -61,7 +63,7 @@ public class EnemyAI : MonoBehaviour
                 currentWaypoint++;
             }
 
-            flip();
+            //flip();
         }
     }
     //public void startFollowing()
@@ -77,11 +79,11 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    private void flip()
-    {
-        if (target.position.x >= rb.position.x)
-            transform.localScale = new Vector3(-5f, 5f, 1f);
-        if (target.position.x <= rb.position.x)
-            transform.localScale = new Vector3(5f, 5f, 1f);
-    }
+    //private void flip()
+    //{
+    //    if (target.position.x >= rb.position.x)
+    //        transform.localScale = new Vector3(-5f, 5f, 1f);
+    //    if (target.position.x <= rb.position.x)
+    //        transform.localScale = new Vector3(5f, 5f, 1f);
+    //}
 }

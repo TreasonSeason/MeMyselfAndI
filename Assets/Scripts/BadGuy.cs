@@ -6,7 +6,6 @@ using UnityEngine.AI;
 public class BadGuy : MonoBehaviour
 {
     // Start is called before the first frame update
-    private Vector3 LastMousePos;
     public Transform player;
     public float maxRange = 5f;
     //RaycastHit hit;
@@ -53,8 +52,10 @@ public class BadGuy : MonoBehaviour
                     seen = true;
                     gameObject.GetComponent<EnemyAI>().follow = true;
                     ani.SetTrigger("spot");
+                    
                     //ani.SetBool("spot", false);
                 }
+                flip();
             }
 
 
@@ -137,5 +138,13 @@ public class BadGuy : MonoBehaviour
     private void dropLoot()
     {
         GameObject newDrop = Instantiate(lootDrop, transform.position, transform.rotation);
+    }
+
+    private void flip()
+    {
+        if (player.position.x >= transform.position.x)
+            transform.localScale = new Vector3(-5f, 5f, 1f);
+        if (player.position.x <= transform.position.x)
+            transform.localScale = new Vector3(5f, 5f, 1f);
     }
 }
