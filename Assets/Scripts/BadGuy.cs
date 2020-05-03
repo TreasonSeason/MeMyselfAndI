@@ -27,10 +27,13 @@ public class BadGuy : MonoBehaviour
     public float attackDamage = 20;
 
     public GameObject lootDrop;
+    private Animator ani;
+    private bool seen = false;
     //NavMeshAgent nav;
     void Start()
     {
         //nav = GetComponent<NavMeshAgent>();
+        ani = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -45,9 +48,21 @@ public class BadGuy : MonoBehaviour
             if (h.collider.tag == "Player")
             {
                 AimAt(player.position);
-                //transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+                if (!seen)
+                {
+                    seen = true;
+                    gameObject.GetComponent<EnemyAI>().follow = true;
+                    ani.SetTrigger("spot");
+                    //ani.SetBool("spot", false);
+                }
             }
 
+
+        }
+        else
+        {
+            gameObject.GetComponent<EnemyAI>().follow = false;
+            seen = false;
         }
         if (shake)
             Shake();
@@ -103,6 +118,7 @@ public class BadGuy : MonoBehaviour
         canAttack = false;
         Invoke("AttackDelay", attackDelay);
         enemy.GetComponent<healthbar>().TakeDamage(attackDamage);
+        ani.SetTrigger("swing");
     }
     void AttackDelay()
     {
