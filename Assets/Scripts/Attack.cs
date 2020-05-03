@@ -12,7 +12,7 @@ public class Attack : MonoBehaviour
     private int fireMode = 0;
     private Vector3 LastMousePos;
     public float demageScale = 1;
-    
+
     public float attackRange;
     public LayerMask whatisEnemy;
     public float swordDamage;
@@ -34,8 +34,8 @@ public class Attack : MonoBehaviour
     private void Update()
     {
         if (fireMode == 1)
-        if (Input.GetMouseButtonDown(0))
-                Shoot(); 
+            if (Input.GetMouseButtonDown(0))
+                Shoot();
         if (fireMode == 2)
             if (Input.GetMouseButtonDown(0) && canAttack)
                 Swing();
@@ -60,7 +60,11 @@ public class Attack : MonoBehaviour
         Collider2D[] enemies = Physics2D.OverlapCircleAll(weapon.transform.position, attackRange, whatisEnemy);
         for (int i = 0; i < enemies.Length; i++)
         {
-            enemies[i].GetComponent<BadGuy>().DecreaseHealth(swordDamage);
+            if (enemies[i].gameObject.name.Contains("Turret"))
+                enemies[i].GetComponent<Turret>().DecreaseHealth(swordDamage);
+            else
+                enemies[i].GetComponent<BadGuy>().DecreaseHealth(swordDamage);
+
         }
     }
 
@@ -82,17 +86,6 @@ public class Attack : MonoBehaviour
                 fireMode = 2;
         }
     }
-
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if(collision.gameObject.tag == "Pickable")
-    //    {
-    //        weapon.GetComponent<SpriteRenderer>().sprite = collision.gameObject.GetComponent<SpriteRenderer>().sprite;
-    //        weapon.GetComponent<SpriteRenderer>().color = collision.gameObject.GetComponent<SpriteRenderer>().color;
-    //        if (collision.gameObject.name.Contains("semiFire"))
-    //            fireMode = 1;
-    //    }
-    //}
 
     public void AimAt(Vector2 target)
     {

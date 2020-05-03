@@ -7,12 +7,14 @@ public class Inventory : MonoBehaviour
     private bool inventoryEnabled;
     public GameObject inventory;
 
+    public ItemDataBase ItemDataBase;
+
     private int allSlots;
     private int enabledSlots;
     private GameObject[] slot;
 
     public GameObject slotHolder;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +28,8 @@ public class Inventory : MonoBehaviour
             if (slot[i].GetComponent<Slot>().item == null)
                 slot[i].GetComponent<Slot>().empty = true;
         }
+        //slot[4].GetComponent<Slot>().icon = ItemDataBase.GetItemCopy(1).icon;
+       // slot[4].GetComponent<Slot>().UpdateSlot();
     }
     
     // Update is called once per frame
@@ -73,6 +77,59 @@ public class Inventory : MonoBehaviour
                 slot[i].GetComponent<Slot>().UpdateSlot();
                 slot[i].GetComponent<Slot>().empty = false;
                 return;
+            }
+        }
+    }
+   /* void AddItem( int itemId, string itemType, string itemDescription, Sprite itemIcon)
+    {
+        for (int i = 0; i < allSlots; i++)
+        {
+            if (slot[i].GetComponent<Slot>().empty)
+            {
+                slot[i].GetComponent<Slot>().icon = itemIcon;
+                slot[i].GetComponent<Slot>().type = itemType;
+                slot[i].GetComponent<Slot>().ID = itemId;
+                slot[i].GetComponent<Slot>().description = itemDescription;
+
+                slot[i].GetComponent<Slot>().UpdateSlot();
+                slot[i].GetComponent<Slot>().empty = false;
+                return;
+            }
+        }
+    }*/
+    public int[] invComp()
+    {
+        int allSlots = 24;
+        GameObject[] slot = new GameObject[allSlots];
+        int[] slotId = new int[allSlots];
+        for (int i = 0; i < allSlots; i++)
+        {
+            slot[i] = slotHolder.transform.GetChild(i).gameObject;
+            slotId[i] = slot[i].GetComponent<Slot>().ID;
+        }
+        return slotId;
+    }
+    public void realoadInventory(int[] ids)
+    {
+        for (int i = 0; i < allSlots; i++)
+        {
+            if (ids[i] != 0)
+            {
+            slot[i].GetComponent<Slot>().icon = ItemDataBase.GetItemCopy(ids[i]).icon;
+            slot[i].GetComponent<Slot>().ID = ItemDataBase.GetItemCopy(ids[i]).ID;
+            slot[i].GetComponent<Slot>().type = ItemDataBase.GetItemCopy(ids[i]).type;
+            slot[i].GetComponent<Slot>().description = ItemDataBase.GetItemCopy(ids[i]).description;
+            slot[i].GetComponent<Slot>().UpdateSlot();
+            slot[i].GetComponent<Slot>().empty = false;
+            }
+            else
+            {
+                slot[i].GetComponent<Slot>().icon = null;
+                slot[i].GetComponent<Slot>().ID = 0 ;
+                slot[i].GetComponent<Slot>().type = null;
+                slot[i].GetComponent<Slot>().description = null;
+                slot[i].GetComponent<Slot>().UpdateSlot();
+                slot[i].GetComponent<Slot>().empty = true;
             }
         }
     }

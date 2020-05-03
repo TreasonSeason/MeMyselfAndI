@@ -30,6 +30,12 @@ public class Slot : MonoBehaviour, IPointerClickHandler
     }
     public void UseItem()
     {
+        if(item != null)
         item.GetComponent<Item>().ItemUsage();
+        else if(type != null)
+        {
+            Item kreipinys = new Item(type,ID);
+            kreipinys.ItemUsage();
+        }
     }
 }

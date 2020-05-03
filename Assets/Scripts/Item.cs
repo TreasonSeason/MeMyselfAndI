@@ -64,6 +64,7 @@ public class Item : MonoBehaviour
         //armor
         if (type == "Armour")
         {
+            Start();
             armour.SetActive(true);
             armour.GetComponent<Item>().equipped = true;
         }
@@ -73,5 +74,20 @@ public class Item : MonoBehaviour
             player = GameObject.FindWithTag("Player");
             player.SendMessage("HealDamage", 20);
         }
+        if (type == "Damage")
+        {
+            player = GameObject.FindWithTag("Player");
+            player.SendMessage("TakeDamage", 20);
+        }
+    }
+
+    public virtual Item GetCopy()
+    {
+        return this;
+    }
+    public Item(string Iteamtype, int ids)
+    {
+        type = Iteamtype;
+        ID = ids;
     }
 }

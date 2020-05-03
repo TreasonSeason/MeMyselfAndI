@@ -9,60 +9,73 @@ public class BadGuy : MonoBehaviour
     private Vector3 LastMousePos;
     public Transform player;
     public float maxRange = 5f;
-    RaycastHit hit;
+    //RaycastHit hit;
     public float health = 100f;
+    public float speed = 5;
 
     public Transform ts;
 
-    public Transform target;
+    //public Transform target;
 
     private bool shake;
     private bool up;
+
+    private bool canAttack = true;
+    public float attackDelay = 0.3f;
+    public float attackRange;
+    public LayerMask whatisEnemy;
+    public float attackDamage = 20;
+
+    public GameObject lootDrop;
+    private Animator ani;
+    private bool seen = false;
     //NavMeshAgent nav;
     void Start()
     {
         //nav = GetComponent<NavMeshAgent>();
+        ani = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        //nav.SetDestination(target.position);
-        //AimAt(player.transform.position);
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    Vector3 p1 = Camera.main.ScreenToWorldPoint(LastMousePos);
-        //    Vector3 p2 = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //    RaycastHit2D h = Physics2D.Linecast(p1, p2);
-        //    Debug.Log(p1 + " -> " + p2 + " = " + h.collider);
-        //    LastMousePos = Input.mousePosition;
-        //}
         if (Vector3.Distance(transform.position, player.position) < maxRange)
         {
-            //AimAt(player.transform.position);
             Vector3 a1 = new Vector3(transform.position.x, transform.position.y, transform.position.z);
             Vector3 a2 = player.position;
             RaycastHit2D h = Physics2D.Linecast(a1, a2);
-            //RaycastHit2D h = Physics2D.Raycast(p1, (p2 - p1), (p2 - p1).magnitude);
-            //Debug.Log(a1 + " -> " + a2 + " = " + h.collider);
 
             if (h.collider.tag == "Player")
             {
-                //transform.Rotate(0, 0, 10);
-                //Ka daro kai pamato
+                AimAt(player.position);
+                if (!seen)
+                {
+                    seen = true;
+                    gameObject.GetComponent<EnemyAI>().follow = true;
+                    ani.SetTrigger("spot");
+                    //ani.SetBool("spot", false);
+                }
             }
 
+
         }
-        //var a = transform.position.x;
+        else
+        {
+            gameObject.GetComponent<EnemyAI>().follow = false;
+            seen = false;
+        }
         if (shake)
             Shake();
-            //transform.position = Random.insideUnitCircle * (float)0.05;
     }
     public void DecreaseHealth(float amount)
     {
         health -= amount;
         if (health <= 0)
+        {
+            dropLoot();
             Object.Destroy(gameObject);
+            return;
+        }
         shake = true;
         Invoke("shakeTime", (float)0.2);
     }
@@ -96,27 +109,33 @@ public class BadGuy : MonoBehaviour
 
         ts.RotateAround(transform.position, new Vector3(0, 0, 1), totalAngle);
 
-
-        Vector3 a1 = ts.position;
-        Vector3 a2 = player.position;
-        RaycastHit2D h = Physics2D.Linecast(a1, a2);
-        //RaycastHit2D h = Physics2D.Raycast(p1, (p2 - p1), (p2 - p1).magnitude);
-        //Debug.Log(a1 + " -> " + a2 + " = " + h.collider);
-
-        if (h.collider.tag == "Player")
-        {
-            transform.Rotate(0, 0, 10);
-            //Ka daro kai pamato
-        }
-        //weapon.transform.RotateAround(transform.position, new Vector3(0, 0, 1), totalAngle);
-
-        //if (weapon.transform.rotation.z < -0.71 || weapon.transform.rotation.z > 0.71) weapon.GetComponent<SpriteRenderer>().flipY = true;
-        //else weapon.GetComponent<SpriteRenderer>().flipY = false;
-        //ts.RotateAround(transform.position, new Vector3(0, 0, 1), (transform.rotation.y < 0) ? -totalAngle : totalAngle);
+        Collider2D[] enemies = Physics2D.OverlapCircleAll(ts.transform.position, attackRange, whatisEnemy);
+        if (enemies.Length > 0 && canAttack)
+            Swing(enemies[0]);
+    }
+    public void Swing(Collider2D enemy)
+    {
+        canAttack = false;
+        Invoke("AttackDelay", attackDelay);
+        enemy.GetComponent<healthbar>().TakeDamage(attackDamage);
+        ani.SetTrigger("swing");
+    }
+    void AttackDelay()
+    {
+        canAttack = true;
     }
 
     private Vector2 V2targ(Vector2 target)
     {
         return new Vector2(target.x - transform.position.x, target.y - transform.position.y);
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(ts.transform.position, attackRange);
+    }
+    private void dropLoot()
+    {
+        GameObject newDrop = Instantiate(lootDrop, transform.position, transform.rotation);
     }
 }
