@@ -38,6 +38,7 @@ public class BadGuy : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+
         if (Vector3.Distance(transform.position, player.position) < maxRange)
         {
             Vector3 a1 = new Vector3(transform.position.x, transform.position.y, transform.position.z);

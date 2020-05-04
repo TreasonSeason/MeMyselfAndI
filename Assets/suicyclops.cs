@@ -11,6 +11,7 @@ public class suicyclops : MonoBehaviour
     Animator ani;
     private Collider2D[] enemies;
     private bool booms = false;
+    public LayerMask whatisBullet;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,12 +21,21 @@ public class suicyclops : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Collider2D[] bullets = Physics2D.OverlapCircleAll(ts.transform.position, 0.3f, whatisBullet);
+        if(bullets.Length > 0)
+        {
+            var bul = bullets[0].GetComponent<Bullet>();
+            GetComponent<enemyHealth>().DecreaseHealth(bul.bulletDamage);
+            bul.DestroyTime();
+        }
+
         enemies = Physics2D.OverlapCircleAll(ts.transform.position, explodeRadius, whatisEnemy);
         if (enemies.Length > 0)
         {
             ani.SetTrigger("boom");
             if (!booms)
             {
+                gameObject.GetComponent<EnemyAI>().follow = false;
                 Invoke("explode", 1.5f);
                 booms = true;
             }

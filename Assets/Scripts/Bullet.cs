@@ -23,7 +23,7 @@ public class Bullet : MonoBehaviour
         rb.MovePosition(rb.position + a * bulletSpeed * Time.fixedDeltaTime);
         //Physics2D.IgnoreLayerCollision(8, 9);
     }
-    void DestroyTime()
+    public void DestroyTime()
     {
         Object.Destroy(gameObject);
     }
