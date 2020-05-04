@@ -9,7 +9,7 @@ public class BadGuy : MonoBehaviour
     public Transform player;
     public float maxRange = 5f;
     //RaycastHit hit;
-    public float health = 100f;
+    //public float health = 100f;
     public float speed = 5;
 
     public Transform ts;
@@ -65,38 +65,38 @@ public class BadGuy : MonoBehaviour
             gameObject.GetComponent<EnemyAI>().follow = false;
             seen = false;
         }
-        if (shake)
-            Shake();
+        //if (shake)
+        //    Shake();
     }
-    public void DecreaseHealth(float amount)
-    {
-        health -= amount;
-        if (health <= 0)
-        {
-            dropLoot();
-            Object.Destroy(gameObject);
-            return;
-        }
-        shake = true;
-        Invoke("shakeTime", (float)0.2);
-    }
-    public void shakeTime()
-    {
-        shake = false;
-    }
-    private void Shake()
-    {
-        if (up)
-        {
-            transform.Translate(0, 0.2f, 0);
-            up = false;
-        }
-        else
-        {
-            transform.Translate(0, -0.2f, 0);
-            up = true;
-        }
-    }
+    //public void DecreaseHealth(float amount)
+    //{
+    //    health -= amount;
+    //    if (health <= 0)
+    //    {
+    //        dropLoot();
+    //        Object.Destroy(gameObject);
+    //        return;
+    //    }
+    //    shake = true;
+    //    Invoke("shakeTime", (float)0.2);
+    //}
+    //public void shakeTime()
+    //{
+    //    shake = false;
+    //}
+    //private void Shake()
+    //{
+    //    if (up)
+    //    {
+    //        transform.Translate(0, 0.2f, 0);
+    //        up = false;
+    //    }
+    //    else
+    //    {
+    //        transform.Translate(0, -0.2f, 0);
+    //        up = true;
+    //    }
+    //}
 
     public void AimAt(Vector2 target)
     {

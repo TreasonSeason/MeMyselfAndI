@@ -21537,7 +21537,7 @@ PrefabInstance:
     - target: {fileID: 2654247345854368662, guid: bb992707a1b36a944a9efb9800568b6a,
         type: 3}
       propertyPath: m_TagString
-      value: Turret
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 2654247345854368662, guid: bb992707a1b36a944a9efb9800568b6a,
         type: 3}

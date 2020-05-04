@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 2182665859575025549}
   - component: {fileID: 2182665859575025558}
   - component: {fileID: 2182665859575025557}
+  - component: {fileID: -476278033022242799}
   m_Layer: 10
   m_Name: Wraith
   m_TagString: Enemy
@@ -219,6 +220,7 @@ MonoBehaviour:
   speed: 5
   nextWaypointDistance: 3
   follow: 0
+  direction: {x: 0, y: 0}
 --- !u!114 &2182665859575025549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,3 +299,16 @@ MonoBehaviour:
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
   constrainInsideGraph: 0
+--- !u!114 &-476278033022242799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6156912623762783087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813e92396a95fb9488372bef626be568, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100

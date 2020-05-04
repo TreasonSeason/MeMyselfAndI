@@ -43,7 +43,7 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            BadGuy temp = collision.gameObject.GetComponent<BadGuy>();
+            enemyHealth temp = collision.gameObject.GetComponent<enemyHealth>();
             DestroyTime();
             temp.DecreaseHealth(bulletDamage);
             //if (bulletDamage > collision.gameObject.GetComponent<BadGuy>().health)
@@ -60,12 +60,12 @@ public class Bullet : MonoBehaviour
             //ha.ManipulateRage(bulletDamage * 0.2f);
             //Debug.Log(temp.GetComponent<BadGuy>().health);
         }
-        else if (collision.gameObject.tag == "Turret")
-        {
-            Turret temp = collision.gameObject.GetComponent<Turret>();
-            DestroyTime();
-            temp.DecreaseHealth(bulletDamage);
-        }
+        //else if (collision.gameObject.tag == "Turret")
+        //{
+        //    Turret temp = collision.gameObject.GetComponent<Turret>();
+        //    DestroyTime();
+        //    temp.DecreaseHealth(bulletDamage);
+        //}
         else if (collision.gameObject.tag == "Player")
         {
             healthbar temp = collision.gameObject.GetComponent<healthbar>();

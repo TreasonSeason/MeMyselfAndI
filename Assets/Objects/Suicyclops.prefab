@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3715731345190880913}
   - component: {fileID: 3715731345190880912}
   - component: {fileID: 3715731345190880926}
+  - component: {fileID: 8755710743979837277}
   m_Layer: 10
   m_Name: Suicyclops
   m_TagString: Enemy
@@ -209,6 +210,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   explosionDamage: 140
+--- !u!114 &8755710743979837277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3715731345190880918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813e92396a95fb9488372bef626be568, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 50
 --- !u!1 &3715731345198177864
 GameObject:
   m_ObjectHideFlags: 0
