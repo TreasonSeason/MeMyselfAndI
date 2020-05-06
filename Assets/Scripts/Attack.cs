@@ -60,10 +60,10 @@ public class Attack : MonoBehaviour
         Collider2D[] enemies = Physics2D.OverlapCircleAll(weapon.transform.position, attackRange, whatisEnemy);
         for (int i = 0; i < enemies.Length; i++)
         {
-            if (enemies[i].gameObject.name.Contains("Turret"))
-                enemies[i].GetComponent<Turret>().DecreaseHealth(swordDamage);
-            else
-                enemies[i].GetComponent<BadGuy>().DecreaseHealth(swordDamage);
+            //if (enemies[i].gameObject.name.Contains("Turret"))
+            //    enemies[i].GetComponent<Turret>().DecreaseHealth(swordDamage);
+            //else
+                enemies[i].GetComponent<enemyHealth>().DecreaseHealth(swordDamage);
 
         }
     }

@@ -29,7 +29,7 @@ public class healthbar : MonoBehaviour
         if (healthPoints <= 0)
         {
             healthPoints = 0;
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("MainSpawn");
             Debug.Log("Dead!");
         }
         FixedUpdate();

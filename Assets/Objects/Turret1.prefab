@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 2654247345854368667}
   - component: {fileID: 2654247345854368665}
   - component: {fileID: 2654247345854368664}
+  - component: {fileID: -8353379345175158021}
   m_Layer: 0
   m_Name: Turret1
   m_TagString: Untagged
@@ -161,6 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  health: 200
   maxRange: 20
   rotateSpeed: 1
   barrelPoint: {fileID: 2654247344455028125}
@@ -233,3 +235,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-8353379345175158021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2654247345854368662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813e92396a95fb9488372bef626be568, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 200
