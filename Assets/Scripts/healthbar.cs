@@ -11,6 +11,7 @@ public class healthbar : MonoBehaviour
     public Text ratioText;
     public float healthPoints = 160;
     public float maxHealthPoints = 200;
+
     void Start()
     {
         //FixedUpdate();
@@ -22,6 +23,7 @@ public class healthbar : MonoBehaviour
         float ratio = healthPoints / maxHealthPoints;
         currentHealthBar.rectTransform.localScale = new Vector3(ratio, 1, 1);
         ratioText.text = (ratio*100).ToString("0") + '%';
+        GameObject.FindWithTag("StatDis").GetComponent<StatDisplays>().ValueTextUpd.text = healthPoints.ToString();
     }
     public void TakeDamage(float damage)
     {
