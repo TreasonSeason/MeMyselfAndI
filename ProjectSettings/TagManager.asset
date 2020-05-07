@@ -11,6 +11,7 @@ TagManager:
   - ArmourManager
   - Turret
   - StatDis
+  - Money
   layers:
   - Default
   - TransparentFX
