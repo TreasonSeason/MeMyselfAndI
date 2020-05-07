@@ -10,6 +10,8 @@ TagManager:
   - Item
   - ArmourManager
   - Turret
+  - StatDis
+  - Money
   layers:
   - Default
   - TransparentFX

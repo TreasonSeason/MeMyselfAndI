@@ -79,6 +79,13 @@ public class Item : MonoBehaviour
             player = GameObject.FindWithTag("Player");
             player.SendMessage("TakeDamage", 20);
         }
+        if (type == "Money")
+        {
+            CurrencyPouch kint = GameObject.FindWithTag("Money").GetComponent<CurrencyPouch>();
+            int coins = int.Parse(kint.ValueTextUpd.text);
+            coins += Random.Range(5, 15);
+            kint.ValueTextUpd.text = coins.ToString();
+        }
     }
 
     public virtual Item GetCopy()

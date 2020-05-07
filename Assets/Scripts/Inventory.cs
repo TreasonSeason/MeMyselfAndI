@@ -59,24 +59,33 @@ public class Inventory : MonoBehaviour
     }
     void AddItem(GameObject itemObject, int itemId ,string itemType, string itemDescription, Sprite itemIcon)
     {
-        for (int i = 0; i < allSlots; i++) 
+        if (itemType == "Money")
         {
-            if (slot[i].GetComponent<Slot>().empty)
+            Item kreipinys = new Item(itemType, itemId);
+            kreipinys.ItemUsage();
+            itemObject.SetActive(false);
+        }
+        else
+        {
+            for (int i = 0; i < allSlots; i++)
             {
-                itemObject.GetComponent<Item>().pickedUp = true;
+                if (slot[i].GetComponent<Slot>().empty)
+                {
+                    itemObject.GetComponent<Item>().pickedUp = true;
 
-                slot[i].GetComponent<Slot>().item = itemObject;
-                slot[i].GetComponent<Slot>().icon = itemIcon;
-                slot[i].GetComponent<Slot>().type = itemType;
-                slot[i].GetComponent<Slot>().ID = itemId;
-                slot[i].GetComponent<Slot>().description = itemDescription;
+                    slot[i].GetComponent<Slot>().item = itemObject;
+                    slot[i].GetComponent<Slot>().icon = itemIcon;
+                    slot[i].GetComponent<Slot>().type = itemType;
+                    slot[i].GetComponent<Slot>().ID = itemId;
+                    slot[i].GetComponent<Slot>().description = itemDescription;
 
-                itemObject.transform.parent = slot[i].transform;
-                itemObject.SetActive(false);
+                    itemObject.transform.parent = slot[i].transform;
+                    itemObject.SetActive(false);
 
-                slot[i].GetComponent<Slot>().UpdateSlot();
-                slot[i].GetComponent<Slot>().empty = false;
-                return;
+                    slot[i].GetComponent<Slot>().UpdateSlot();
+                    slot[i].GetComponent<Slot>().empty = false;
+                    return;
+                }
             }
         }
     }
