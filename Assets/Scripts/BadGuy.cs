@@ -25,9 +25,11 @@ public class BadGuy : MonoBehaviour
     public LayerMask whatisEnemy;
     public float attackDamage = 20;
 
-    public GameObject lootDrop;
+    //public GameObject lootDrop;
     private Animator ani;
     private bool seen = false;
+
+    public LayerMask whatIsBullet;
     //NavMeshAgent nav;
     void Start()
     {
@@ -38,7 +40,18 @@ public class BadGuy : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        //Collider2D[] bullets = Physics2D.OverlapAreaAll(new Vector2(-0.12f, -0.22f), new Vector2(0.12f, 0.22f), whatIsBullet);
+        //OverlapCapsuleAll(transform.position, new Vector2(0.24f, 0.45f), CapsuleDirection2D.Vertical, 1f, whatIsBullet);
+        Collider2D[] bullets = Physics2D.OverlapCircleAll(transform.position, 0.4f, whatIsBullet);
+        if (bullets.Length > 0)
+        {
+            var bul = bullets[0].GetComponent<Bullet>();
+            GetComponent<enemyHealth>().DecreaseHealth(bul.bulletDamage);
+            bul.DestroyTime();
+            Debug.Log("bullet");
+        }
 
+        //Debug.Log("Atejo");
         if (Vector3.Distance(transform.position, player.position) < maxRange)
         {
             Vector3 a1 = new Vector3(transform.position.x, transform.position.y, transform.position.z);
@@ -53,8 +66,6 @@ public class BadGuy : MonoBehaviour
                     seen = true;
                     gameObject.GetComponent<EnemyAI>().follow = true;
                     ani.SetTrigger("spot");
-                    
-                    //ani.SetBool("spot", false);
                 }
                 flip();
             }
@@ -66,6 +77,8 @@ public class BadGuy : MonoBehaviour
             gameObject.GetComponent<EnemyAI>().follow = false;
             seen = false;
         }
+
+        
         //if (shake)
         //    Shake();
     }
@@ -136,10 +149,10 @@ public class BadGuy : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(ts.transform.position, attackRange);
     }
-    private void dropLoot()
-    {
-        GameObject newDrop = Instantiate(lootDrop, transform.position, transform.rotation);
-    }
+    //private void dropLoot()
+    //{
+    //    GameObject newDrop = Instantiate(lootDrop, transform.position, transform.rotation);
+    //}
 
     private void flip()
     {

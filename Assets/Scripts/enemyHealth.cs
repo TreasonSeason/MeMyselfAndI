@@ -7,6 +7,7 @@ public class enemyHealth : MonoBehaviour
     public float health;
     private bool shake;
     private bool up;
+    public GameObject lootDrop;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +28,7 @@ public class enemyHealth : MonoBehaviour
         health -= amount;
         if (health <= 0)
         {
+            dropLoot();
             Object.Destroy(gameObject);
             return;
         }
@@ -49,5 +51,9 @@ public class enemyHealth : MonoBehaviour
             transform.Translate(0, -0.2f, 0);
             up = true;
         }
+    }
+    private void dropLoot()
+    {
+        GameObject newDrop = Instantiate(lootDrop, transform.position, transform.rotation);
     }
 }

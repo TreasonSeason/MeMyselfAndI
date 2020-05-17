@@ -10,6 +10,8 @@ TagManager:
   - Item
   - ArmourManager
   - Turret
+  - StatDis
+  - Money
   layers:
   - Default
   - TransparentFX
@@ -44,6 +46,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Base
+    uniqueID: 1211590965
+    locked: 0
+  - name: respawn
+    uniqueID: 3788264173
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

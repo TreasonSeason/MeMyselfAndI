@@ -19,7 +19,7 @@ public class suicyclops : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Collider2D[] bullets = Physics2D.OverlapCircleAll(ts.transform.position, 0.3f, whatisBullet);
         if(bullets.Length > 0)
