@@ -6,6 +6,7 @@ using Pathfinding;
 public class EnemyAI : MonoBehaviour
 {
     public Transform target;
+    public bool fleeBool = false;
     public Rigidbody2D rb;
 
     public float speed = 2f;

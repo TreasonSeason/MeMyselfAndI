@@ -10,14 +10,8 @@ public class BadGuy : MonoBehaviour
     public float maxRange = 5f;
     //RaycastHit hit;
     //public float health = 100f;
-    public float speed = 5;
 
     public Transform ts;
-
-    //public Transform target;
-
-    private bool shake;
-    private bool up;
 
     private bool canAttack = true;
     public float attackDelay = 0.3f;
@@ -42,14 +36,16 @@ public class BadGuy : MonoBehaviour
     {
         //Collider2D[] bullets = Physics2D.OverlapAreaAll(new Vector2(-0.12f, -0.22f), new Vector2(0.12f, 0.22f), whatIsBullet);
         //OverlapCapsuleAll(transform.position, new Vector2(0.24f, 0.45f), CapsuleDirection2D.Vertical, 1f, whatIsBullet);
-        Collider2D[] bullets = Physics2D.OverlapCircleAll(transform.position, 0.4f, whatIsBullet);
-        if (bullets.Length > 0)
-        {
-            var bul = bullets[0].GetComponent<Bullet>();
-            GetComponent<enemyHealth>().DecreaseHealth(bul.bulletDamage);
-            bul.DestroyTime();
-            Debug.Log("bullet");
-        }
+
+        //SITAS
+        //Collider2D[] bullets = Physics2D.OverlapCircleAll(transform.position, 0.4f, whatIsBullet);
+        //if (bullets.Length > 0)
+        //{
+        //    var bul = bullets[0].GetComponent<Bullet>();
+        //    GetComponent<enemyHealth>().DecreaseHealth(bul.bulletDamage);
+        //    bul.DestroyTime();
+        //    Debug.Log("bullet");
+        //}
 
         //Debug.Log("Atejo");
         if (Vector3.Distance(transform.position, player.position) < maxRange)

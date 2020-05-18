@@ -42,11 +42,11 @@ GameObject:
   - component: {fileID: 6156912623762783080}
   - component: {fileID: 6156912623762783083}
   - component: {fileID: 6156912623762783082}
-  - component: {fileID: 6156912623762783085}
   - component: {fileID: 6156912623762783084}
   - component: {fileID: 2182665859575025550}
   - component: {fileID: 2182665859575025549}
   - component: {fileID: -476278033022242799}
+  - component: {fileID: 7070242322951024821}
   m_Layer: 10
   m_Name: Wraith
   m_TagString: Enemy
@@ -166,22 +166,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &6156912623762783085
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6156912623762783087}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.24, y: 0.45}
-  m_Direction: 0
 --- !u!95 &6156912623762783084
 Animator:
   serializedVersion: 3
@@ -262,3 +246,19 @@ MonoBehaviour:
   health: 100
   lootDrop: {fileID: 8369779897015922834, guid: 4a7f588a6f5d0b044837abc3e1ee89e2,
     type: 3}
+--- !u!70 &7070242322951024821
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6156912623762783087}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.24, y: 0.45}
+  m_Direction: 0
