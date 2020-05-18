@@ -36,6 +36,7 @@ public class BadGuy : MonoBehaviour
     {
         //Collider2D[] bullets = Physics2D.OverlapAreaAll(new Vector2(-0.12f, -0.22f), new Vector2(0.12f, 0.22f), whatIsBullet);
         //OverlapCapsuleAll(transform.position, new Vector2(0.24f, 0.45f), CapsuleDirection2D.Vertical, 1f, whatIsBullet);
+<<<<<<< HEAD
 
         //SITAS
         //Collider2D[] bullets = Physics2D.OverlapCircleAll(transform.position, 0.4f, whatIsBullet);
@@ -46,6 +47,16 @@ public class BadGuy : MonoBehaviour
         //    bul.DestroyTime();
         //    Debug.Log("bullet");
         //}
+=======
+        Collider2D[] bullets = Physics2D.OverlapCircleAll(transform.position, 0.4f, whatIsBullet);
+        if (bullets.Length > 0)
+        {
+            var bul = bullets[0].GetComponent<Bullet>();
+            GetComponent<enemyHealth>().DecreaseHealth(bul.bulletDamage);
+            bul.DestroyTime();
+            Debug.Log("bullet");
+        }
+>>>>>>> 2e488b0fe89d80b06f7f97a62e4a34395fe9f8b9
 
         //Debug.Log("Atejo");
         if (Vector3.Distance(transform.position, player.position) < maxRange)

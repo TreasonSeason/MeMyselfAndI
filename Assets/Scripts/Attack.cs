@@ -22,9 +22,12 @@ public class Attack : MonoBehaviour
     public Transform flameSpawn;
     public float flameRange = 2f;
     public float flameDamage = 1f;
+<<<<<<< HEAD
     public GameObject flame;
     private bool dega = false;
     private bool isBurning = false;
+=======
+>>>>>>> 2e488b0fe89d80b06f7f97a62e4a34395fe9f8b9
     void Start()
     {
         weapon.transform.Rotate(new Vector3(0, 0, 1), 90);
@@ -34,9 +37,12 @@ public class Attack : MonoBehaviour
     void FixedUpdate()
     {
         AimAt(mainCamera.ScreenToWorldPoint(Input.mousePosition), ts);
+<<<<<<< HEAD
 
         if (dega)
             Burn();
+=======
+>>>>>>> 2e488b0fe89d80b06f7f97a62e4a34395fe9f8b9
         //Cia dar kazkas?
 
     }
@@ -49,6 +55,7 @@ public class Attack : MonoBehaviour
         if (fireMode == 2)
             if (Input.GetMouseButtonDown(0) && canAttack)
                 Swing();
+<<<<<<< HEAD
         if (fireMode == 3)
         {
             AimAt(mainCamera.ScreenToWorldPoint(Input.mousePosition), flameSpawn);
@@ -71,6 +78,15 @@ public class Attack : MonoBehaviour
 
         }
 
+=======
+        if(fireMode == 3)
+        {
+            AimAt(mainCamera.ScreenToWorldPoint(Input.mousePosition), flameSpawn);
+            if (Input.GetMouseButtonDown(0))
+                Burn();
+        }
+            
+>>>>>>> 2e488b0fe89d80b06f7f97a62e4a34395fe9f8b9
     }
     void swordDelay()
     {
@@ -92,13 +108,18 @@ public class Attack : MonoBehaviour
         Collider2D[] enemies = Physics2D.OverlapCircleAll(weapon.transform.position, attackRange, whatisEnemy);
         for (int i = 0; i < enemies.Length; i++)
         {
+<<<<<<< HEAD
             enemies[i].GetComponent<enemyHealth>().DecreaseHealth(swordDamage);
+=======
+                enemies[i].GetComponent<enemyHealth>().DecreaseHealth(swordDamage);
+>>>>>>> 2e488b0fe89d80b06f7f97a62e4a34395fe9f8b9
 
         }
     }
 
     public void Burn()
     {
+<<<<<<< HEAD
         if (dega)
         {
             //var buvo = flameSpawn.position;
@@ -109,6 +130,12 @@ public class Attack : MonoBehaviour
             {
                 enemies[i].GetComponent<enemyHealth>().DecreaseHealth(flameDamage);
             }
+=======
+        Collider2D[] enemies = Physics2D.OverlapCapsuleAll(flameSpawn.position, new Vector2(1f, 1.1f), CapsuleDirection2D.Vertical, flameSpawn.rotation.z);
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            enemies[i].GetComponent<enemyHealth>().DecreaseHealth(flameDamage);
+>>>>>>> 2e488b0fe89d80b06f7f97a62e4a34395fe9f8b9
         }
     }
 
@@ -128,9 +155,14 @@ public class Attack : MonoBehaviour
                 fireMode = 1;
             if (collision.gameObject.name.Contains("sword"))
                 fireMode = 2;
+<<<<<<< HEAD
             if (collision.gameObject.name.Contains("Flame"))
                 fireMode = 3;
 
+=======
+            if (collision.gameObject.name.Contains("flame"))
+                fireMode = 3;
+>>>>>>> 2e488b0fe89d80b06f7f97a62e4a34395fe9f8b9
         }
     }
 

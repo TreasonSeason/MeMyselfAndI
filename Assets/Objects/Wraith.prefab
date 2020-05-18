@@ -166,6 +166,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+<<<<<<< HEAD
+=======
+--- !u!70 &6156912623762783085
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6156912623762783087}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.24, y: 0.45}
+  m_Direction: 0
+>>>>>>> 2e488b0fe89d80b06f7f97a62e4a34395fe9f8b9
 --- !u!95 &6156912623762783084
 Animator:
   serializedVersion: 3
@@ -233,6 +252,7 @@ MonoBehaviour:
     value: -1
 --- !u!114 &-476278033022242799
 MonoBehaviour:
+<<<<<<< HEAD
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -248,12 +268,15 @@ MonoBehaviour:
     type: 3}
 --- !u!70 &7070242322951024821
 CapsuleCollider2D:
+=======
+>>>>>>> 2e488b0fe89d80b06f7f97a62e4a34395fe9f8b9
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6156912623762783087}
   m_Enabled: 1
+<<<<<<< HEAD
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -262,3 +285,12 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.24, y: 0.45}
   m_Direction: 0
+=======
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813e92396a95fb9488372bef626be568, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  lootDrop: {fileID: 8369779897015922834, guid: 4a7f588a6f5d0b044837abc3e1ee89e2,
+    type: 3}
+>>>>>>> 2e488b0fe89d80b06f7f97a62e4a34395fe9f8b9
