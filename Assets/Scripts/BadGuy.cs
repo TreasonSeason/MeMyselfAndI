@@ -27,27 +27,13 @@ public class BadGuy : MonoBehaviour
     //NavMeshAgent nav;
     void Start()
     {
-        //nav = GetComponent<NavMeshAgent>();
         ani = GetComponent<Animator>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        //Collider2D[] bullets = Physics2D.OverlapAreaAll(new Vector2(-0.12f, -0.22f), new Vector2(0.12f, 0.22f), whatIsBullet);
-        //OverlapCapsuleAll(transform.position, new Vector2(0.24f, 0.45f), CapsuleDirection2D.Vertical, 1f, whatIsBullet);
-<<<<<<< HEAD
-
-        //SITAS
-        //Collider2D[] bullets = Physics2D.OverlapCircleAll(transform.position, 0.4f, whatIsBullet);
-        //if (bullets.Length > 0)
-        //{
-        //    var bul = bullets[0].GetComponent<Bullet>();
-        //    GetComponent<enemyHealth>().DecreaseHealth(bul.bulletDamage);
-        //    bul.DestroyTime();
-        //    Debug.Log("bullet");
-        //}
-=======
         Collider2D[] bullets = Physics2D.OverlapCircleAll(transform.position, 0.4f, whatIsBullet);
         if (bullets.Length > 0)
         {
@@ -56,7 +42,6 @@ public class BadGuy : MonoBehaviour
             bul.DestroyTime();
             Debug.Log("bullet");
         }
->>>>>>> 2e488b0fe89d80b06f7f97a62e4a34395fe9f8b9
 
         //Debug.Log("Atejo");
         if (Vector3.Distance(transform.position, player.position) < maxRange)
@@ -84,40 +69,7 @@ public class BadGuy : MonoBehaviour
             gameObject.GetComponent<EnemyAI>().follow = false;
             seen = false;
         }
-
-        
-        //if (shake)
-        //    Shake();
     }
-    //public void DecreaseHealth(float amount)
-    //{
-    //    health -= amount;
-    //    if (health <= 0)
-    //    {
-    //        dropLoot();
-    //        Object.Destroy(gameObject);
-    //        return;
-    //    }
-    //    shake = true;
-    //    Invoke("shakeTime", (float)0.2);
-    //}
-    //public void shakeTime()
-    //{
-    //    shake = false;
-    //}
-    //private void Shake()
-    //{
-    //    if (up)
-    //    {
-    //        transform.Translate(0, 0.2f, 0);
-    //        up = false;
-    //    }
-    //    else
-    //    {
-    //        transform.Translate(0, -0.2f, 0);
-    //        up = true;
-    //    }
-    //}
 
     public void AimAt(Vector2 target)
     {
@@ -156,10 +108,6 @@ public class BadGuy : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(ts.transform.position, attackRange);
     }
-    //private void dropLoot()
-    //{
-    //    GameObject newDrop = Instantiate(lootDrop, transform.position, transform.rotation);
-    //}
 
     private void flip()
     {

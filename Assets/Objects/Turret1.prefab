@@ -247,5 +247,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 200
-  lootDrop: {fileID: 8369779897015922834, guid: 4a7f588a6f5d0b044837abc3e1ee89e2,
-    type: 3}
+  lootDrop:
+  - {fileID: 4908977112597688756, guid: 620149072a086e941b9446d40a847700, type: 3}
+  - {fileID: 8369779897015922834, guid: 4a7f588a6f5d0b044837abc3e1ee89e2, type: 3}

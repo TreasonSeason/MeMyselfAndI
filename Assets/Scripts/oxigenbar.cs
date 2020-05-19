@@ -63,7 +63,8 @@ public class oxigenbar : MonoBehaviour
         if (oxigenPoints <= 0)
         {
             oxigenPoints = 0;
-            player.SendMessage("TakeDamage", damage);
+            player.GetComponent<healthbar>().TakeDamage(damage);
+            //player.SendMessage("TakeDamage", damage);
         }
         FixedUpdate();
     }

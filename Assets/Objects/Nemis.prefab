@@ -203,8 +203,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 575778287949381468, guid: efc5e4f368b7c5f46b092f1b2bfc338d, type: 3}
-  fleeTarget: {fileID: 0}
-  fleeBool: 0
   rb: {fileID: 5192429299405606925}
   speed: 4
   nextWaypointDistance: 3
@@ -272,8 +270,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  lootDrop: {fileID: 8369779897015922834, guid: 4a7f588a6f5d0b044837abc3e1ee89e2,
-    type: 3}
+  lootDrop:
+  - {fileID: 4908977112597688756, guid: 620149072a086e941b9446d40a847700, type: 3}
+  - {fileID: 8369779897015922834, guid: 4a7f588a6f5d0b044837abc3e1ee89e2, type: 3}
 --- !u!114 &4312742458918671603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,6 +288,7 @@ MonoBehaviour:
   player: {fileID: 575778287949381468, guid: efc5e4f368b7c5f46b092f1b2bfc338d, type: 3}
   maxRange: 20
   minRange: 10
+  avoidenceSpeed: 4
   ts: {fileID: 6304689916385939771}
   bullet: {fileID: 6644669531175189242, guid: 42625f6835e0446489f9d879e8502ad5, type: 3}
 --- !u!58 &-3763263496068070200
