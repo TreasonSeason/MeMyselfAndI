@@ -7,7 +7,7 @@ public class enemyHealth : MonoBehaviour
     public float health;
     private bool shake;
     private bool up;
-    public GameObject lootDrop;
+    public GameObject[] lootDrop;
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +54,7 @@ public class enemyHealth : MonoBehaviour
     }
     private void dropLoot()
     {
-        GameObject newDrop = Instantiate(lootDrop, transform.position, transform.rotation);
+        int random = (int)Random.Range(0f, lootDrop.Length);
+        GameObject newDrop = Instantiate(lootDrop[random], transform.position, transform.rotation);
     }
 }

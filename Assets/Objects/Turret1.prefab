@@ -165,7 +165,7 @@ MonoBehaviour:
   maxRange: 20
   rotateSpeed: 1
   barrelPoint: {fileID: 2654247344455028125}
-  bullet: {fileID: 1713154824227157459, guid: 8fc27d01d406b914a891c8afa7c7f6ec, type: 3}
+  bullet: {fileID: 3134941484958434827, guid: 47d727cf413208a4c9eae3a0cb631e4e, type: 3}
   rayCastEnd: {fileID: 2654247345845865279}
   attackDelay: 0.5
 --- !u!50 &2654247345854368667
@@ -247,5 +247,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 200
-  lootDrop: {fileID: 8369779897015922834, guid: 4a7f588a6f5d0b044837abc3e1ee89e2,
-    type: 3}
+  lootDrop:
+  - {fileID: 4908977112597688756, guid: 620149072a086e941b9446d40a847700, type: 3}
+  - {fileID: 8369779897015922834, guid: 4a7f588a6f5d0b044837abc3e1ee89e2, type: 3}

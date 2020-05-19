@@ -12,6 +12,7 @@ TagManager:
   - Turret
   - StatDis
   - Money
+  - Bg_Music1
   layers:
   - Default
   - TransparentFX

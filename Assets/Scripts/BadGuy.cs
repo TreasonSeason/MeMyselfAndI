@@ -10,14 +10,8 @@ public class BadGuy : MonoBehaviour
     public float maxRange = 5f;
     //RaycastHit hit;
     //public float health = 100f;
-    public float speed = 5;
 
     public Transform ts;
-
-    //public Transform target;
-
-    private bool shake;
-    private bool up;
 
     private bool canAttack = true;
     public float attackDelay = 0.3f;
@@ -33,15 +27,13 @@ public class BadGuy : MonoBehaviour
     //NavMeshAgent nav;
     void Start()
     {
-        //nav = GetComponent<NavMeshAgent>();
         ani = GetComponent<Animator>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        //Collider2D[] bullets = Physics2D.OverlapAreaAll(new Vector2(-0.12f, -0.22f), new Vector2(0.12f, 0.22f), whatIsBullet);
-        //OverlapCapsuleAll(transform.position, new Vector2(0.24f, 0.45f), CapsuleDirection2D.Vertical, 1f, whatIsBullet);
         Collider2D[] bullets = Physics2D.OverlapCircleAll(transform.position, 0.4f, whatIsBullet);
         if (bullets.Length > 0)
         {
@@ -77,40 +69,7 @@ public class BadGuy : MonoBehaviour
             gameObject.GetComponent<EnemyAI>().follow = false;
             seen = false;
         }
-
-        
-        //if (shake)
-        //    Shake();
     }
-    //public void DecreaseHealth(float amount)
-    //{
-    //    health -= amount;
-    //    if (health <= 0)
-    //    {
-    //        dropLoot();
-    //        Object.Destroy(gameObject);
-    //        return;
-    //    }
-    //    shake = true;
-    //    Invoke("shakeTime", (float)0.2);
-    //}
-    //public void shakeTime()
-    //{
-    //    shake = false;
-    //}
-    //private void Shake()
-    //{
-    //    if (up)
-    //    {
-    //        transform.Translate(0, 0.2f, 0);
-    //        up = false;
-    //    }
-    //    else
-    //    {
-    //        transform.Translate(0, -0.2f, 0);
-    //        up = true;
-    //    }
-    //}
 
     public void AimAt(Vector2 target)
     {
@@ -149,10 +108,6 @@ public class BadGuy : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(ts.transform.position, attackRange);
     }
-    //private void dropLoot()
-    //{
-    //    GameObject newDrop = Instantiate(lootDrop, transform.position, transform.rotation);
-    //}
 
     private void flip()
     {
