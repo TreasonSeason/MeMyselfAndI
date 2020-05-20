@@ -87,6 +87,7 @@ public class Attack : MonoBehaviour
     {
         GameObject newbullet = Instantiate(bullet, ts.position, ts.rotation);
         newbullet.GetComponent<Bullet>().Bullet1();
+        FindObjectOfType<AudioManager>().Play("Laser_Shot1");
     }
 
     public void Swing()
@@ -99,6 +100,7 @@ public class Attack : MonoBehaviour
         {
             enemies[i].GetComponent<enemyHealth>().DecreaseHealth(swordDamage);
         }
+        FindObjectOfType<AudioManager>().Play("SwordSwash");
     }
 
     public void Burn()

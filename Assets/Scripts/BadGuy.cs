@@ -93,6 +93,7 @@ public class BadGuy : MonoBehaviour
         Invoke("AttackDelay", attackDelay);
         enemy.GetComponent<healthbar>().TakeDamage(attackDamage);
         ani.SetTrigger("swing");
+        FindObjectOfType<AudioManager>().Play("Woosh");
     }
     void AttackDelay()
     {

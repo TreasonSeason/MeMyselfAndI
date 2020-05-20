@@ -43,22 +43,76 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aad8e500dadb2654ea7aaebd2cc0e452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mixerGroup: {fileID: -4534604449076420508, guid: e668961df1df6c84a8bf0594863a216c,
+    type: 2}
   sounds:
-  - name: Spaceship_track
-    clip: {fileID: 8300000, guid: 72fdb39b7b95a3b42bbf0c70090d3a52, type: 3}
-    volume: 0.314
+  - name: Laser_Shot1
+    clip: {fileID: 8300000, guid: 49217a05430216c48a931566b57bc7fe, type: 3}
+    volume: 1
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
-    loop: 1
-    mixerGroup: {fileID: 0}
+    loop: 0
+    mixerGroup: {fileID: -4534604449076420508, guid: e668961df1df6c84a8bf0594863a216c,
+      type: 2}
     source: {fileID: 0}
-  - name: Main_Menu_track
-    clip: {fileID: 8300000, guid: 661ac84c6462b504aa50f2b8e77ebc95, type: 3}
-    volume: 0.157
-    volumeVariance: 0.338
+  - name: Turret_Shot1
+    clip: {fileID: 8300000, guid: b16e115ba9370ac418fb6c373d43044f, type: 3}
+    volume: 1
+    volumeVariance: 0
     pitch: 1
     pitchVariance: 0
-    loop: 1
-    mixerGroup: {fileID: 0}
+    loop: 0
+    mixerGroup: {fileID: -4534604449076420508, guid: e668961df1df6c84a8bf0594863a216c,
+      type: 2}
+    source: {fileID: 0}
+  - name: Woosh
+    clip: {fileID: 8300000, guid: 8510b9276098c904ca8cc944ce9d788c, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -4534604449076420508, guid: e668961df1df6c84a8bf0594863a216c,
+      type: 2}
+    source: {fileID: 0}
+  - name: Magic
+    clip: {fileID: 8300000, guid: 2174660dabc426b4cbfe19d3f9441eb2, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -4534604449076420508, guid: e668961df1df6c84a8bf0594863a216c,
+      type: 2}
+    source: {fileID: 0}
+  - name: Lava
+    clip: {fileID: 8300000, guid: 96bf75a7eb72ab74c9334100facc8dd9, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -4534604449076420508, guid: e668961df1df6c84a8bf0594863a216c,
+      type: 2}
+    source: {fileID: 0}
+  - name: SwordSwash
+    clip: {fileID: 8300000, guid: 20f4c4d5dcb99ff4199bdd6f45d45a56, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -4534604449076420508, guid: e668961df1df6c84a8bf0594863a216c,
+      type: 2}
+    source: {fileID: 0}
+  - name: EXPLODE
+    clip: {fileID: 8300000, guid: 853dc751ce819ea4d9490ed050c79ec4, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -4534604449076420508, guid: e668961df1df6c84a8bf0594863a216c,
+      type: 2}
     source: {fileID: 0}

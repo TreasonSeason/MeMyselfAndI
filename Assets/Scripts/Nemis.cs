@@ -76,6 +76,7 @@ public class Nemis : MonoBehaviour
             GameObject newbullet = Instantiate(bullet, ts.position, ts.rotation);
             newbullet.GetComponent<Bullet>().Bullet1();
             Invoke("shootCheck", 1f);
+            FindObjectOfType<AudioManager>().Play("Magic");
         }
     }
 
