@@ -51,6 +51,7 @@ public class Turret : MonoBehaviour
         GameObject newbullet = Instantiate(bullet, barrelPoint.position, barrelPoint.rotation);
         newbullet.GetComponent<Bullet>().Bullet1();
         canshoot = true;
+        FindObjectOfType<AudioManager>().Play("Turret_Shot1");
         //Invoke("unShoot", attackDelay);
     }
 

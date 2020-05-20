@@ -14,14 +14,14 @@ public class Inventory : MonoBehaviour
     private GameObject[] slot;
 
     public GameObject slotHolder;
-    
+
     // Start is called before the first frame update
     void Start()
     {
         allSlots = 24;
         slot = new GameObject[allSlots];
 
-        for(int i = 0; i < allSlots; i++)
+        for (int i = 0; i < allSlots; i++)
         {
             slot[i] = slotHolder.transform.GetChild(i).gameObject;
 
@@ -29,15 +29,15 @@ public class Inventory : MonoBehaviour
                 slot[i].GetComponent<Slot>().empty = true;
         }
         //slot[4].GetComponent<Slot>().icon = ItemDataBase.GetItemCopy(1).icon;
-       // slot[4].GetComponent<Slot>().UpdateSlot();
+        // slot[4].GetComponent<Slot>().UpdateSlot();
     }
-    
+
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
             inventoryEnabled = !inventoryEnabled;
-        if(inventoryEnabled == true)
+        if (inventoryEnabled == true)
         {
             inventory.SetActive(true);
         }
@@ -48,7 +48,7 @@ public class Inventory : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("TAg: "+other.tag);
+        Debug.Log("TAg: " + other.tag);
         if (other.tag == "Item")
         {
             GameObject itemPickedUp = other.gameObject;
@@ -57,7 +57,7 @@ public class Inventory : MonoBehaviour
             AddItem(itemPickedUp, item.ID, item.type, item.description, item.icon);
         }
     }
-    void AddItem(GameObject itemObject, int itemId ,string itemType, string itemDescription, Sprite itemIcon)
+    void AddItem(GameObject itemObject, int itemId, string itemType, string itemDescription, Sprite itemIcon)
     {
         if (itemType == "Money")
         {
@@ -89,23 +89,23 @@ public class Inventory : MonoBehaviour
             }
         }
     }
-   /* void AddItem( int itemId, string itemType, string itemDescription, Sprite itemIcon)
-    {
-        for (int i = 0; i < allSlots; i++)
-        {
-            if (slot[i].GetComponent<Slot>().empty)
-            {
-                slot[i].GetComponent<Slot>().icon = itemIcon;
-                slot[i].GetComponent<Slot>().type = itemType;
-                slot[i].GetComponent<Slot>().ID = itemId;
-                slot[i].GetComponent<Slot>().description = itemDescription;
+    /* void AddItem( int itemId, string itemType, string itemDescription, Sprite itemIcon)
+     {
+         for (int i = 0; i < allSlots; i++)
+         {
+             if (slot[i].GetComponent<Slot>().empty)
+             {
+                 slot[i].GetComponent<Slot>().icon = itemIcon;
+                 slot[i].GetComponent<Slot>().type = itemType;
+                 slot[i].GetComponent<Slot>().ID = itemId;
+                 slot[i].GetComponent<Slot>().description = itemDescription;
 
-                slot[i].GetComponent<Slot>().UpdateSlot();
-                slot[i].GetComponent<Slot>().empty = false;
-                return;
-            }
-        }
-    }*/
+                 slot[i].GetComponent<Slot>().UpdateSlot();
+                 slot[i].GetComponent<Slot>().empty = false;
+                 return;
+             }
+         }
+     }*/
     public int[] invComp()
     {
         int allSlots = 24;
@@ -124,22 +124,61 @@ public class Inventory : MonoBehaviour
         {
             if (ids[i] != 0)
             {
-            slot[i].GetComponent<Slot>().icon = ItemDataBase.GetItemCopy(ids[i]).icon;
-            slot[i].GetComponent<Slot>().ID = ItemDataBase.GetItemCopy(ids[i]).ID;
-            slot[i].GetComponent<Slot>().type = ItemDataBase.GetItemCopy(ids[i]).type;
-            slot[i].GetComponent<Slot>().description = ItemDataBase.GetItemCopy(ids[i]).description;
-            slot[i].GetComponent<Slot>().UpdateSlot();
-            slot[i].GetComponent<Slot>().empty = false;
+                slot[i].GetComponent<Slot>().icon = ItemDataBase.GetItemCopy(ids[i]).icon;
+                slot[i].GetComponent<Slot>().ID = ItemDataBase.GetItemCopy(ids[i]).ID;
+                slot[i].GetComponent<Slot>().type = ItemDataBase.GetItemCopy(ids[i]).type;
+                slot[i].GetComponent<Slot>().description = ItemDataBase.GetItemCopy(ids[i]).description;
+                slot[i].GetComponent<Slot>().UpdateSlot();
+                slot[i].GetComponent<Slot>().empty = false;
             }
             else
             {
                 slot[i].GetComponent<Slot>().icon = null;
-                slot[i].GetComponent<Slot>().ID = 0 ;
+                slot[i].GetComponent<Slot>().ID = 0;
                 slot[i].GetComponent<Slot>().type = null;
                 slot[i].GetComponent<Slot>().description = null;
                 slot[i].GetComponent<Slot>().UpdateSlot();
                 slot[i].GetComponent<Slot>().empty = true;
             }
         }
+    }
+    public void AddShopItem(int itemId)
+    {
+        //
+        CurrencyPouch kint = GameObject.FindWithTag("Money").GetComponent<CurrencyPouch>();
+        int coins = int.Parse(kint.ValueTextUpd.text);
+        int kaina = PriceCheck(itemId);
+        //
+        if (coins >= kaina)
+        {
+            for (int i = 0; i < allSlots; i++)
+            {
+                if (slot[i].GetComponent<Slot>().empty)
+                {
+                    slot[i].GetComponent<Slot>().icon = ItemDataBase.GetItemCopy(itemId).icon;
+                    slot[i].GetComponent<Slot>().ID = ItemDataBase.GetItemCopy(itemId).ID;
+                    slot[i].GetComponent<Slot>().type = ItemDataBase.GetItemCopy(itemId).type;
+                    slot[i].GetComponent<Slot>().description = ItemDataBase.GetItemCopy(itemId).description;
+                    slot[i].GetComponent<Slot>().UpdateSlot();
+                    slot[i].GetComponent<Slot>().empty = false;
+                    coins = coins - kaina;
+                    kint.ValueTextUpd.text = coins.ToString();
+                    return;
+                }
+            }
+        }
+        else return;
+
+    }
+    public int PriceCheck(int id)
+    {
+        int[] prices = new int[100];
+        for(int i=0; i<100; i++)
+        {
+            prices[i] = 50;
+        }
+        int price = 1000;
+        price = prices[id];
+        return price;
     }
 }

@@ -54,7 +54,7 @@ MonoBehaviour:
   target: {fileID: 575778287949381468, guid: efc5e4f368b7c5f46b092f1b2bfc338d, type: 3}
   rb: {fileID: 3715731345190880919}
   speed: 12
-  nextWaypointDistance: 3
+  nextWaypointDistance: 1
   follow: 1
   direction: {x: 0, y: 0}
 --- !u!50 &3715731345190880919
@@ -113,7 +113,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3715731345190880918}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -226,6 +226,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+  lootDrop:
+  - {fileID: 4908977112597688756, guid: 620149072a086e941b9446d40a847700, type: 3}
+  - {fileID: 8369779897015922834, guid: 4a7f588a6f5d0b044837abc3e1ee89e2, type: 3}
 --- !u!1 &3715731345198177864
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,6 +10,8 @@ public class movement : MonoBehaviour
 
     public float multiplier = 0.5f;
     private float multi;
+    public AudioSource walkaudio;
+    public AudioSource runaudio;
 
     Vector2 plmovement;
 
@@ -40,6 +42,43 @@ public class movement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + plmovement * moveSpeed * Time.fixedDeltaTime * multi);
+        if (plmovement.x != 0 || plmovement.y != 0)
+        {
+            if (multi == 1)
+            {
+                if (runaudio.isPlaying)
+                {
+                    runaudio.Stop();
+                }
+                if (!walkaudio.isPlaying)
+                {
+                    walkaudio.Play();
+                }
+            }
+            if (multi > 1)
+            {
+                if (walkaudio.isPlaying)
+                {
+                    walkaudio.Stop();
+                }
+                if (!runaudio.isPlaying)
+                {
+                    runaudio.Play();
+                }
+            }
+        }
+        else
+        {
+            if (walkaudio.isPlaying)
+            {
+              walkaudio.Stop();
+            }
+            if (runaudio.isPlaying)
+            {
+              runaudio.Stop();
+            }
+            
+        } 
     }
 
     private void animationCheck()

@@ -1,0 +1,1543 @@
+fileFormatVersion: 2
+guid: 2242f4d67175923429b0539f1ab65aff
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3588627908731426195
+    second: VioOrb_0
+  - first:
+      213: -8294475809406865162
+    second: VioOrb_1
+  - first:
+      213: -2368615872604254199
+    second: VioOrb_2
+  - first:
+      213: 1708164992559343993
+    second: VioOrb_3
+  - first:
+      213: -8865490287414890060
+    second: VioOrb_4
+  - first:
+      213: 7229296137430902344
+    second: VioOrb_5
+  - first:
+      213: -1719003364608113576
+    second: VioOrb_6
+  - first:
+      213: 9154905263158651439
+    second: VioOrb_7
+  - first:
+      213: -6337556347433900362
+    second: VioOrb_8
+  - first:
+      213: 6438817178880904651
+    second: VioOrb_9
+  - first:
+      213: -2762722885611464791
+    second: VioOrb_10
+  - first:
+      213: -8458460477361316026
+    second: VioOrb_11
+  - first:
+      213: 5568270380699081354
+    second: VioOrb_12
+  - first:
+      213: -8168046294875315261
+    second: VioOrb_13
+  - first:
+      213: -8050001319205575142
+    second: VioOrb_14
+  - first:
+      213: 612283298661549017
+    second: VioOrb_15
+  - first:
+      213: -653318029415164579
+    second: VioOrb_16
+  - first:
+      213: 2802444396626521831
+    second: VioOrb_17
+  - first:
+      213: 3159179767115143062
+    second: VioOrb_18
+  - first:
+      213: -9200669166862480022
+    second: VioOrb_19
+  - first:
+      213: 4149422910824788174
+    second: VioOrb_20
+  - first:
+      213: -1613446851899915382
+    second: VioOrb_21
+  - first:
+      213: -358186145354560437
+    second: VioOrb_22
+  - first:
+      213: 5088623562395696070
+    second: VioOrb_23
+  - first:
+      213: 474896153058307563
+    second: VioOrb_24
+  - first:
+      213: 6338929037822114356
+    second: VioOrb_25
+  - first:
+      213: 7908631792656896088
+    second: VioOrb_26
+  - first:
+      213: 8251657082565625435
+    second: VioOrb_27
+  - first:
+      213: 4540910808431700875
+    second: VioOrb_28
+  - first:
+      213: 1854312500376285092
+    second: VioOrb_29
+  - first:
+      213: -4745513318168730042
+    second: VioOrb_30
+  - first:
+      213: 5733995600650884713
+    second: VioOrb_31
+  - first:
+      213: 1783125780386445113
+    second: VioOrb_32
+  - first:
+      213: 3922221087969152222
+    second: VioOrb_33
+  - first:
+      213: -3427401371142897123
+    second: VioOrb_34
+  - first:
+      213: 881507133216287436
+    second: VioOrb_35
+  - first:
+      213: -73377152896344562
+    second: VioOrb_36
+  - first:
+      213: 5342519269431224059
+    second: VioOrb_37
+  - first:
+      213: -5105255430896462555
+    second: VioOrb_38
+  - first:
+      213: 1443223294663445948
+    second: VioOrb_39
+  - first:
+      213: -9071842161453704854
+    second: VioOrb_40
+  - first:
+      213: 8009777254282998284
+    second: VioOrb_41
+  - first:
+      213: -5510668971254859854
+    second: VioOrb_42
+  - first:
+      213: 5093913366435143786
+    second: VioOrb_43
+  - first:
+      213: 8829667044445990777
+    second: VioOrb_44
+  - first:
+      213: -7843768368057631274
+    second: VioOrb_45
+  - first:
+      213: -1636479190703607511
+    second: VioOrb_46
+  - first:
+      213: -2724449784490843360
+    second: VioOrb_47
+  - first:
+      213: -5482985864702934821
+    second: VioOrb_48
+  - first:
+      213: 4556716122027927913
+    second: VioOrb_49
+  - first:
+      213: -6879365910396011347
+    second: VioOrb_50
+  - first:
+      213: 5493470024543385284
+    second: VioOrb_51
+  - first:
+      213: -4723919769538114786
+    second: VioOrb_52
+  - first:
+      213: 928108075801244937
+    second: VioOrb_53
+  - first:
+      213: 2771465948004309451
+    second: VioOrb_54
+  - first:
+      213: 167975534796371232
+    second: VioOrb_55
+  - first:
+      213: -1357843305913899289
+    second: VioOrb_56
+  - first:
+      213: -982514324962494976
+    second: VioOrb_57
+  - first:
+      213: 2485375174421121699
+    second: VioOrb_58
+  - first:
+      213: 8063798763581031729
+    second: VioOrb_59
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: VioOrb_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 120
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3955df2d11e5dc130800000000000000
+      internalID: 3588627908731426195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_1
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 120
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f0bb36823a14ec80800000000000000
+      internalID: -8294475809406865162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_2
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 120
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9005210d96cf02fd0800000000000000
+      internalID: -2368615872604254199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_3
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 120
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 979e14fa20f94b710800000000000000
+      internalID: 1708164992559343993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_4
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 120
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b1b5f21e8377f480800000000000000
+      internalID: -8865490287414890060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_5
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 120
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8462ca7d88e935460800000000000000
+      internalID: 7229296137430902344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_6
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 120
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85405dc2c8fd428e0800000000000000
+      internalID: -1719003364608113576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_7
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 120
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2aece205d1cc0f70800000000000000
+      internalID: 9154905263158651439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_8
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 120
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b62e2f641a7c08a0800000000000000
+      internalID: -6337556347433900362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_9
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 120
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcd01e02c164b5950800000000000000
+      internalID: 6438817178880904651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a7594e4c26d8a9d0800000000000000
+      internalID: -2762722885611464791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_11
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 96
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64f923cb2038d9a80800000000000000
+      internalID: -8458460477361316026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_12
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 96
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8ad5e6c868764d40800000000000000
+      internalID: 5568270380699081354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_13
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 96
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c3e205cb2545ae80800000000000000
+      internalID: -8168046294875315261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_14
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 96
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a16635f6376a84090800000000000000
+      internalID: -8050001319205575142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_15
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 96
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d340a68a644f7800800000000000000
+      internalID: 612283298661549017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_16
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 96
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d55d953b6b2fee6f0800000000000000
+      internalID: -653318029415164579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_17
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 96
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ee25bba45844e620800000000000000
+      internalID: 2802444396626521831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_18
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 96
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 697df789249a7db20800000000000000
+      internalID: 3159179767115143062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_19
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 96
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6dc545d328a05080800000000000000
+      internalID: -9200669166862480022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 72
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec0349e1726b59930800000000000000
+      internalID: 4149422910824788174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_21
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 72
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a838888f2a2eb99e0800000000000000
+      internalID: -1613446851899915382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_22
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 72
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4cccaa3997770bf0800000000000000
+      internalID: -358186145354560437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_23
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 72
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cb37485b2c6e9640800000000000000
+      internalID: 5088623562395696070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_24
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 72
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bed6d3cf88b279600800000000000000
+      internalID: 474896153058307563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_25
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 72
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43abbc3ff5668f750800000000000000
+      internalID: 6338929037822114356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_26
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 72
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 850dca4b6ba11cd60800000000000000
+      internalID: 7908631792656896088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_27
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 72
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5609aeb566c38270800000000000000
+      internalID: 8251657082565625435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_28
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 72
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8bad4d425e840f30800000000000000
+      internalID: 4540910808431700875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_29
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 72
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4afae7ff467dbb910800000000000000
+      internalID: 1854312500376285092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 646eaa9a7cc842eb0800000000000000
+      internalID: -4745513318168730042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_31
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 48
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 966d2786e9e339f40800000000000000
+      internalID: 5733995600650884713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_32
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 48
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93776c9237feeb810800000000000000
+      internalID: 1783125780386445113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_33
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 48
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edc82f67c478e6630800000000000000
+      internalID: 3922221087969152222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_34
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 48
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d124752bc9c6f60d0800000000000000
+      internalID: -3427401371142897123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_35
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 48
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cca6456311ebb3c00800000000000000
+      internalID: 881507133216287436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_36
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 48
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0edbf24edf4bfef0800000000000000
+      internalID: -73377152896344562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_37
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 48
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf6a02c38f0742a40800000000000000
+      internalID: 5342519269431224059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_38
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 48
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52558c10c3d7629b0800000000000000
+      internalID: -5105255430896462555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_39
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 48
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbdcbf1a0fb570410800000000000000
+      internalID: 1443223294663445948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 24
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a69d32c6e975a1280800000000000000
+      internalID: -9071842161453704854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_41
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 24
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c02ba83a9f1782f60800000000000000
+      internalID: 8009777254282998284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_42
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 24
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b7369574cb2683b0800000000000000
+      internalID: -5510668971254859854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_43
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 24
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a602bf2d73731b640800000000000000
+      internalID: 5093913366435143786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_44
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 24
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97f2d253567498a70800000000000000
+      internalID: 8829667044445990777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_45
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 24
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ddba713a36552390800000000000000
+      internalID: -7843768368057631274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_46
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 24
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 921fac3b8de0a49e0800000000000000
+      internalID: -1636479190703607511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_47
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 24
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 023a8031b5fc03ad0800000000000000
+      internalID: -2724449784490843360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_48
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 24
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd0c4e9f76588e3b0800000000000000
+      internalID: -5482985864702934821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_49
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 24
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96925c3ab25bc3f30800000000000000
+      internalID: 4556716122027927913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dacf9e627259780a0800000000000000
+      internalID: -6879365910396011347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_51
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 0
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c63a25b1e9bc3c40800000000000000
+      internalID: 5493470024543385284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_52
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 0
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1b4c3d7ff3417eb0800000000000000
+      internalID: -4723919769538114786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_53
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 0
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 905fd4ba06d41ec00800000000000000
+      internalID: 928108075801244937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_54
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 0
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc953e98899367620800000000000000
+      internalID: 2771465948004309451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_55
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 0
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0257e72ebd4c45200800000000000000
+      internalID: 167975534796371232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_56
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 0
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e62c5a15b8f72de0800000000000000
+      internalID: -1357843305913899289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_57
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 0
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 006b0e15d686d52f0800000000000000
+      internalID: -982514324962494976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_58
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aa02f49d83dd7220800000000000000
+      internalID: 2485375174421121699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VioOrb_59
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 0
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1354b7b604e58ef60800000000000000
+      internalID: 8063798763581031729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

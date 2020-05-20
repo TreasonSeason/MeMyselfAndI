@@ -18,6 +18,13 @@ public class Attack : MonoBehaviour
     public float swordDamage;
     public float attackDelay = 0.3f;
     private bool canAttack = true;
+
+    public Transform flameSpawn;
+    public float flameRange = 2f;
+    public float flameDamage = 1f;
+    public GameObject flame;
+    private bool dega = false;
+    private bool isBurning = false;
     void Start()
     {
         weapon.transform.Rotate(new Vector3(0, 0, 1), 90);
@@ -26,7 +33,10 @@ public class Attack : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        AimAt(mainCamera.ScreenToWorldPoint(Input.mousePosition));
+        AimAt(mainCamera.ScreenToWorldPoint(Input.mousePosition), ts);
+
+        if (dega)
+            Burn();
         //Cia dar kazkas?
 
     }
@@ -39,6 +49,33 @@ public class Attack : MonoBehaviour
         if (fireMode == 2)
             if (Input.GetMouseButtonDown(0) && canAttack)
                 Swing();
+        //if (fireMode == 3)
+        //{
+        //    AimAt(mainCamera.ScreenToWorldPoint(Input.mousePosition), flameSpawn);
+        //    if (Input.GetMouseButton(0))
+        //    {
+        //        dega = true;
+        //        if (isBurning == false)
+        //        {
+        //            GameObject fire = Instantiate(flame, ts.position, flameSpawn.rotation);
+        //            fire.GetComponent<Rigidbody2D>().MovePosition(ts.position);
+        //            fire.GetComponent<Transform>().position = flameSpawn.position;
+        //            isBurning = true;
+        //        }
+        //    }
+        //    if (Input.GetMouseButtonUp(0))
+        //    {
+        //        dega = false;
+        //        isBurning = false;
+        //    }
+
+        //}
+        if (fireMode == 3)
+        {
+            AimAt(mainCamera.ScreenToWorldPoint(Input.mousePosition), flameSpawn);
+            if (Input.GetMouseButtonDown(0))
+                Burn();
+        }
     }
     void swordDelay()
     {
@@ -50,6 +87,7 @@ public class Attack : MonoBehaviour
     {
         GameObject newbullet = Instantiate(bullet, ts.position, ts.rotation);
         newbullet.GetComponent<Bullet>().Bullet1();
+        FindObjectOfType<AudioManager>().Play("Laser_Shot1");
     }
 
     public void Swing()
@@ -60,19 +98,31 @@ public class Attack : MonoBehaviour
         Collider2D[] enemies = Physics2D.OverlapCircleAll(weapon.transform.position, attackRange, whatisEnemy);
         for (int i = 0; i < enemies.Length; i++)
         {
-            //if (enemies[i].gameObject.name.Contains("Turret"))
-            //    enemies[i].GetComponent<Turret>().DecreaseHealth(swordDamage);
-            //else
-                enemies[i].GetComponent<enemyHealth>().DecreaseHealth(swordDamage);
-
+            enemies[i].GetComponent<enemyHealth>().DecreaseHealth(swordDamage);
         }
+        FindObjectOfType<AudioManager>().Play("SwordSwash");
     }
 
-    //private Vector2 Knockback(Vector2 target)
-    //{
-    //    return new Vector2(transform.position.x - target.x, transform.position.y - target.y);
+    public void Burn()
+    {
+        if (dega)
+        {
+            //var buvo = flameSpawn.position;
+            //GameObject fire = Instantiate(flame, ts.position, flameSpawn.rotation);
+            //fire.GetComponent<DestroyScript>().Kill();
+            Collider2D[] enemies = Physics2D.OverlapCapsuleAll(flameSpawn.position, new Vector2(1f, 1.1f), CapsuleDirection2D.Vertical, flameSpawn.rotation.z);
+            for (int i = 0; i < enemies.Length; i++)
+            {
+                enemies[i].GetComponent<enemyHealth>().DecreaseHealth(flameDamage);
+            }
+        }
 
-    //}
+        //private Vector2 Knockback(Vector2 target)
+        //{
+        //    return new Vector2(transform.position.x - target.x, transform.position.y - target.y);
+
+        //}
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -84,10 +134,12 @@ public class Attack : MonoBehaviour
                 fireMode = 1;
             if (collision.gameObject.name.Contains("sword"))
                 fireMode = 2;
+            if (collision.gameObject.name.Contains("Flame"))
+                fireMode = 3;
         }
     }
 
-    public void AimAt(Vector2 target)
+    public void AimAt(Vector2 target, Transform ts)
     {
         Vector2 dir = V2targ(target);
 
@@ -113,5 +165,8 @@ public class Attack : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(weapon.transform.position, attackRange);
+
+        //Gizmos.color = Color.yellow;
+        //Gizmos.DrawC
     }
 }

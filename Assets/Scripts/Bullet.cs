@@ -46,26 +46,7 @@ public class Bullet : MonoBehaviour
             enemyHealth temp = collision.gameObject.GetComponent<enemyHealth>();
             DestroyTime();
             temp.DecreaseHealth(bulletDamage);
-            //if (bulletDamage > collision.gameObject.GetComponent<BadGuy>().health)
-            //{
-            //    bulletDamage -= temp.health;
-            //    healthTaken -= temp.health / 2;
-            //    collision.gameObject.GetComponent<BadGuy>().health = -1;
-            //}
-            //else
-            //{
-            //    collision.gameObject.GetComponent<BadGuy>().DecreaseHealth(bulletDamage);
-            //    DestroyTime();
-            //}
-            //ha.ManipulateRage(bulletDamage * 0.2f);
-            //Debug.Log(temp.GetComponent<BadGuy>().health);
         }
-        //else if (collision.gameObject.tag == "Turret")
-        //{
-        //    Turret temp = collision.gameObject.GetComponent<Turret>();
-        //    DestroyTime();
-        //    temp.DecreaseHealth(bulletDamage);
-        //}
         else if (collision.gameObject.tag == "Player")
         {
             healthbar temp = collision.gameObject.GetComponent<healthbar>();
@@ -74,12 +55,10 @@ public class Bullet : MonoBehaviour
         }
         else if (collision.gameObject.tag == "World" && shot)
         {
-
-            //Debug.Log(Resources.Load<GameObject>("Objects/pliurze"));
-            //Debug.Log(this.GetComponent<Transform>().position);
-            //Debug.Log(collision.contacts[0].point);
-            //GameObject newpliurze = Instantiate(Resources.Load<GameObject>("Objects/pliurze"), collision.contacts[0].point, GetComponent<Transform>().rotation);
-            //newpliurze.GetComponent<pliurze>().health = healthTaken;
+            DestroyTime();
+        }
+        else if (collision.gameObject.tag == "Bullet")
+        {
             DestroyTime();
         }
     }
