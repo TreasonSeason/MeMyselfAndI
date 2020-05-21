@@ -86,6 +86,15 @@ public class Item : MonoBehaviour
             coins += Random.Range(5, 15);
             kint.ValueTextUpd.text = coins.ToString();
         }
+        if (type == "Oxigen")
+        {
+            player = GameObject.FindWithTag("Player");
+            player.GetComponent<oxigenbar>().RestoreOxigen(50);
+        }
+    }
+    public void BuyItem(int id)
+    {
+        GameObject.FindWithTag("Player").GetComponent<Inventory>().AddShopItem(id);
     }
 
     public virtual Item GetCopy()

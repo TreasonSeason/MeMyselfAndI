@@ -16,12 +16,11 @@ public class oxigenbar : MonoBehaviour
     public GameObject player;
     void FixedUpdate()
     {
-
-        float ratio = oxigenPoints / maxOxigenPoints;
-        currentOxigenBar.rectTransform.localScale = new Vector3(ratio, 1, 1);
-        ratioText.text = (ratio * 100).ToString("0") + '%';
-        // if(GameObject.FindWithTag("Player").GetComponent<Inventory>().gameObject.activeInHierarchy)
-        //    GameObject.FindWithTag("StatDis").GetComponent<StatDisplays>().ValueTextUpd.text = healthPoints.ToString();
+            float ratio = oxigenPoints / maxOxigenPoints;
+            currentOxigenBar.rectTransform.localScale = new Vector3(ratio, 1, 1);
+            ratioText.text = (ratio * 100).ToString("0") + '%';
+            // if(GameObject.FindWithTag("Player").GetComponent<Inventory>().gameObject.activeInHierarchy)
+            //    GameObject.FindWithTag("StatDis").GetComponent<StatDisplays>().ValueTextUpd.text = healthPoints.ToString();
     }
 
     void Update()

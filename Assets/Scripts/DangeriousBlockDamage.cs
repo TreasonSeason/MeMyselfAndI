@@ -9,7 +9,7 @@ public class DangeriousBlockDamage : MonoBehaviour
     public GameObject player;
     //public float Damage = 1;
     public float damage = 1;
-
+    public AudioSource burnaudio;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,12 +22,25 @@ public class DangeriousBlockDamage : MonoBehaviour
         if (PlayerInTheZone == true)
         {
 
+            if (!burnaudio.isPlaying)
+            {
+                burnaudio.Play();
+            }
             //  player.SavePlayer();
             // Debug.Log("Dead!");
-                player.SendMessage("TakeDamage", damage);
+            player.SendMessage("TakeDamage", damage);
+
             // this.GetComponent<PlayerS>().LoadPlayer();
             // GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerS>().LoadPlayer();
             //  player.LoadPlayer();
+        }
+        else
+        {
+            if (burnaudio.isPlaying)
+            {
+             burnaudio.Stop();
+            }
+           
         }
     }
     void OnTriggerEnter2D(Collider2D other)

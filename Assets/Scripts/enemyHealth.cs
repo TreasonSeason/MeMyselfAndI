@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class enemyHealth : MonoBehaviour
 {
+    private float maxH;
     public float health;
     private bool shake;
     private bool up;
@@ -11,16 +12,19 @@ public class enemyHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        maxH = health;
     }
 
     // Update is called once per frame
     void Update()
     {
 
-
         if (shake)
             Shake();
+    }
+    public float getMaxHealth()
+    {
+        return maxH;
     }
 
     public void DecreaseHealth(float amount)

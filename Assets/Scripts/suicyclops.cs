@@ -38,6 +38,7 @@ public class suicyclops : MonoBehaviour
                 gameObject.GetComponent<EnemyAI>().follow = false;
                 Invoke("explode", 1.5f);
                 booms = true;
+                FindObjectOfType<AudioManager>().Play("EXPLODE");
             }
 
         }
