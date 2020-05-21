@@ -343,6 +343,7 @@ GameObject:
   m_Component:
   - component: {fileID: 25136792}
   - component: {fileID: 25136793}
+  - component: {fileID: 25136794}
   m_Layer: 5
   m_Name: StatPanel
   m_TagString: Untagged
@@ -398,6 +399,22 @@ MonoBehaviour:
   m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
+--- !u!114 &25136794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25136791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77849fecce4941540bd7d16010c95c1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ValueTextUpdHealth: {fileID: 544390814}
+  ValueTextUpdDmg: {fileID: 907778961}
+  ValueTextUpdOxygen: {fileID: 1846403587}
+  ValueTextUpdArmor: {fileID: 1757364268}
 --- !u!1 &32972761
 GameObject:
   m_ObjectHideFlags: 0
@@ -1664,9 +1681,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: '200
-
-'
+  m_Text: 140
 --- !u!222 &544390815
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2679,7 +2694,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1174536157}
   - component: {fileID: 1174536158}
-  - component: {fileID: 1174536159}
   m_Layer: 5
   m_Name: StatDisplay
   m_TagString: StatDis
@@ -2729,21 +2743,6 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
---- !u!114 &1174536159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1174536156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77849fecce4941540bd7d16010c95c1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NameText: {fileID: 1214440108}
-  ValueText: {fileID: 544390814}
-  ValueTextUpd: {fileID: 544390814}
 --- !u!1 &1214440106
 GameObject:
   m_ObjectHideFlags: 0
@@ -2812,7 +2811,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Health
+  m_Text: 'Max Health
 
 '
 --- !u!222 &1214440109
@@ -2891,7 +2890,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Armor(Wip)
+  m_Text: 'Armor
 
 '
 --- !u!222 &1245746754
@@ -3555,7 +3554,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Oxygen(Wip)
+  m_Text: 'Oxygen
 
 '
 --- !u!222 &1546510442
@@ -3634,7 +3633,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Attack(WIP)
+  m_Text: 'Base Attack
 
 
 '

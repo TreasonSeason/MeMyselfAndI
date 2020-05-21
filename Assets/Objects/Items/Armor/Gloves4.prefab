@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 34
-  type: Weapon
+  type: Gloves
   description: bomb
   icon: {fileID: 21300000, guid: 47684eba410fd484e912dee508527404, type: 3}
   pickedUp: 0

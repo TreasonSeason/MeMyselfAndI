@@ -9,6 +9,7 @@ public class Attack : MonoBehaviour
     public GameObject weapon;
     public Camera mainCamera;
     public GameObject bullet;
+    public GameObject FrostBullet;
     private int fireMode = 0;
     private Vector3 LastMousePos;
     public float demageScale = 1;
@@ -46,9 +47,15 @@ public class Attack : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha1) && GetComponent<MultiplierStats>().hasSword)
+        {
+            fireMode = 2;
+            weapon.GetComponent<SpriteRenderer>().sprite = multiScript.swordSprite;
+            weapon.GetComponent<SpriteRenderer>().color = multiScript.swordColor;
+        }
         if (fireMode == 1)
             if (Input.GetMouseButtonDown(0))
-                Shoot();
+                Shoot(bullet);
         if (fireMode == 2)
             if (Input.GetMouseButtonDown(0) && canAttack)
                 Swing();
@@ -79,6 +86,9 @@ public class Attack : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
                 Burn();
         }
+        if(fireMode == 4)
+            if (Input.GetMouseButtonDown(0))
+                Shoot(FrostBullet);
     }
     void swordDelay()
     {
@@ -86,9 +96,9 @@ public class Attack : MonoBehaviour
         weapon.GetComponent<Transform>().Rotate(0, 0, 30);
     }
 
-    public void Shoot()
+    public void Shoot(GameObject bull)
     {
-        GameObject newbullet = Instantiate(bullet, ts.position, ts.rotation);
+        GameObject newbullet = Instantiate(bull, ts.position, ts.rotation);
         newbullet.GetComponent<Bullet>().Bullet1();
         newbullet.GetComponent<Bullet>().bulletDamage *= multiScript.damageMultiplier;
         FindObjectOfType<AudioManager>().Play("Laser_Shot1");
@@ -137,9 +147,18 @@ public class Attack : MonoBehaviour
             if (collision.gameObject.name.Contains("semiFire"))
                 fireMode = 1;
             if (collision.gameObject.name.Contains("sword"))
+            {
                 fireMode = 2;
+                gameObject.GetComponent<MultiplierStats>().hasSword = true;
+                gameObject.GetComponent<MultiplierStats>().swordSprite = collision.gameObject.GetComponent<SpriteRenderer>().sprite;
+                gameObject.GetComponent<MultiplierStats>().swordColor = collision.gameObject.GetComponent<SpriteRenderer>().color;
+                Destroy(collision.gameObject);
+            }
+               
             if (collision.gameObject.name.Contains("Flame"))
                 fireMode = 3;
+            if (collision.gameObject.name.Contains("Frost"))
+                fireMode = 4;
         }
     }
 
