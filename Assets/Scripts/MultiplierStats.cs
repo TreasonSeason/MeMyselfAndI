@@ -8,6 +8,9 @@ public class MultiplierStats : MonoBehaviour
     private Attack attacks;
     public float damageMultiplier = 1f;
     public float resistenceMultiplier = 1f;
+    public bool hasSword = false;
+    public Sprite swordSprite;
+    public Color swordColor;
     //void Start()
     //{
     //    attacks.GetComponent<Attack>();

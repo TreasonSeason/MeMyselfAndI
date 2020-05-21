@@ -55,9 +55,22 @@ public class Shopinventory : MonoBehaviour
         //slot[4].GetComponent<Slot>().icon = ItemDataBase.GetItemCopy(1).icon;
         // slot[4].GetComponent<Slot>().UpdateSlot();
         int[] slotId = new int[allSlots];
-        slotId[0] = 3;
-        slotId[1] = 2;
-        slotId[2] = 4;
+        slotId[0] = 21;
+        slotId[1] = 11;
+        slotId[2] = 31;
+        slotId[3] = 41;
+        slotId[4] = 22;
+        slotId[5] = 12;
+        slotId[6] = 32;
+        slotId[7] = 42;
+        slotId[8] = 23;
+        slotId[9] = 13;
+        slotId[10] = 33;
+        slotId[11] = 43;
+        slotId[12] = 24;
+        slotId[13] = 14;
+        slotId[14] = 34;
+        slotId[15] = 44;
         LoadShop(slotId);
     }
     public void LoadShop(int[] ids)

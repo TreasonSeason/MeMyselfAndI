@@ -18,12 +18,16 @@ public class StatDisplays : MonoBehaviour
         //NameText = texts[0];
         //ValueText = texts[1];
         //ValueTextUpd.text = GameObject.FindWithTag("Player").GetComponent<healthbar>().healthPoints.ToString();
-        ValueTextUpdHealth.text = GameObject.FindWithTag("Player").GetComponent<healthbar>().maxHealthPoints.ToString();
+       /* ValueTextUpdHealth.text = GameObject.FindWithTag("Player").GetComponent<healthbar>().maxHealthPoints.ToString();
         ValueTextUpdOxygen.text = GameObject.FindWithTag("Player").GetComponent<oxigenbar>().maxOxigenPoints.ToString();
+        ValueTextUpdDmg.text = GameObject.FindWithTag("Player").GetComponent<MultiplierStats>().damageMultiplier.ToString();
+        ValueTextUpdArmor.text = GameObject.FindWithTag("Player").GetComponent<MultiplierStats>().resistenceMultiplier.ToString();*/
     }
-    /*void Update()
+    void Update()
     {
         ValueTextUpdHealth.text = GameObject.FindWithTag("Player").GetComponent<healthbar>().maxHealthPoints.ToString();
         ValueTextUpdOxygen.text = GameObject.FindWithTag("Player").GetComponent<oxigenbar>().maxOxigenPoints.ToString();
-    }*/
+        ValueTextUpdDmg.text = GameObject.FindWithTag("Player").GetComponent<MultiplierStats>().damageMultiplier.ToString();
+        ValueTextUpdArmor.text = GameObject.FindWithTag("Player").GetComponent<MultiplierStats>().resistenceMultiplier.ToString();
+    }
 }
