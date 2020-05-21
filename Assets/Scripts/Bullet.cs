@@ -31,10 +31,6 @@ public class Bullet : MonoBehaviour
     public void Bullet1(/*Vector2 direction*/)
     {
         rb = GetComponent<Rigidbody2D>();
-        //rb.gravityScale = 0.2f + transform.localScale.y;
-        //rb.velocity = gameObject.transform.up * bulletSpeed;
-        //Vector2 a = gameObject.transform.up;
-        //rb.MovePosition(rb.position + a * bulletSpeed * Time.fixedDeltaTime);
         Invoke("DestroyTime", despawnTime);
         shot = true;
     }
@@ -57,7 +53,7 @@ public class Bullet : MonoBehaviour
         {
             DestroyTime();
         }
-        else if (collision.gameObject.tag == "Bullet")
+        else if (collision.gameObject.tag == "Bullet" && shot)
         {
             DestroyTime();
         }

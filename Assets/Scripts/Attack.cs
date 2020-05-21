@@ -25,8 +25,11 @@ public class Attack : MonoBehaviour
     public GameObject flame;
     private bool dega = false;
     private bool isBurning = false;
+    
+    private MultiplierStats multiScript;
     void Start()
     {
+        multiScript = GetComponent<MultiplierStats>();
         weapon.transform.Rotate(new Vector3(0, 0, 1), 90);
     }
 
@@ -87,6 +90,7 @@ public class Attack : MonoBehaviour
     {
         GameObject newbullet = Instantiate(bullet, ts.position, ts.rotation);
         newbullet.GetComponent<Bullet>().Bullet1();
+        newbullet.GetComponent<Bullet>().bulletDamage *= multiScript.damageMultiplier;
         FindObjectOfType<AudioManager>().Play("Laser_Shot1");
     }
 
@@ -98,7 +102,7 @@ public class Attack : MonoBehaviour
         Collider2D[] enemies = Physics2D.OverlapCircleAll(weapon.transform.position, attackRange, whatisEnemy);
         for (int i = 0; i < enemies.Length; i++)
         {
-            enemies[i].GetComponent<enemyHealth>().DecreaseHealth(swordDamage);
+            enemies[i].GetComponent<enemyHealth>().DecreaseHealth(swordDamage * multiScript.damageMultiplier);
         }
         FindObjectOfType<AudioManager>().Play("SwordSwash");
     }
