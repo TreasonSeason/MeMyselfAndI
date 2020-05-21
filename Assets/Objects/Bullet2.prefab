@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 838235572991592806}
   m_Layer: 9
   m_Name: Bullet2
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,7 +96,7 @@ Animator:
   m_GameObject: {fileID: 3134941484958434827}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4b9c99fb651a4d5449f33971e15e0083, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

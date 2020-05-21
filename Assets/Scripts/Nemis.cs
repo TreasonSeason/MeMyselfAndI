@@ -47,7 +47,7 @@ public class Nemis : MonoBehaviour
                         gameObject.GetComponent<EnemyAI>().follow = true;
                         //ani.SetTrigger("spot");
                     }
-                    Shoot();
+                    //Shoot();
                     //flip();
                 }
 
@@ -96,6 +96,8 @@ public class Nemis : MonoBehaviour
         float totalAngle = Mathf.DeltaAngle(pointAngle, dirAngle);
 
         ts.RotateAround(transform.position, new Vector3(0, 0, 1), totalAngle);
+
+        Shoot();
     }
 
     private Vector2 V2targ(Vector2 target)

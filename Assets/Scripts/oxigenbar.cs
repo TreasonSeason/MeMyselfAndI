@@ -30,7 +30,7 @@ public class oxigenbar : MonoBehaviour
             safezone = true;
         }
         else safezone = false;
-        if (safezone == false)
+        if (safezone == false && Time.timeScale > 0)
         {
             RemoveOxigen(reduceOxigen);
         }

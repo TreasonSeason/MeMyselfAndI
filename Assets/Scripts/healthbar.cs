@@ -11,9 +11,11 @@ public class healthbar : MonoBehaviour
     public Text ratioText;
     public float healthPoints = 160;
     public float maxHealthPoints = 200;
+    private MultiplierStats multiS;
 
     void Start()
     {
+        multiS = GetComponent<MultiplierStats>();
         //FixedUpdate();
     }
 
@@ -28,7 +30,8 @@ public class healthbar : MonoBehaviour
     }
     public void TakeDamage(float damage)
     {
-        healthPoints = healthPoints - damage;
+        float resistence = 1 / multiS.resistenceMultiplier;
+        healthPoints -= damage * resistence;
         if (healthPoints <= 0)
         {
             healthPoints = 0;

@@ -5,19 +5,25 @@ using UnityEngine.UI;
 
 public class StatDisplays : MonoBehaviour
 {
-    public Text NameText;
-    public Text ValueText;
-    public Text ValueTextUpd;
+    //public Text NameText;
+    //public Text ValueText;
+    public Text ValueTextUpdHealth;
+    public Text ValueTextUpdDmg;
+    public Text ValueTextUpdOxygen;
+    public Text ValueTextUpdArmor;
 
     private void OnValidate()
     {
-        Text[] texts = GetComponentsInChildren<Text>();
-        NameText = texts[0];
-        ValueText = texts[1];
+        //Text[] texts = GetComponentsInChildren<Text>();
+        //NameText = texts[0];
+        //ValueText = texts[1];
         //ValueTextUpd.text = GameObject.FindWithTag("Player").GetComponent<healthbar>().healthPoints.ToString();
+        ValueTextUpdHealth.text = GameObject.FindWithTag("Player").GetComponent<healthbar>().maxHealthPoints.ToString();
+        ValueTextUpdOxygen.text = GameObject.FindWithTag("Player").GetComponent<oxigenbar>().maxOxigenPoints.ToString();
     }
-    /*public void UpdStat()
+    /*void Update()
     {
-        ValueTextUpd.text = GameObject.FindWithTag("Player").GetComponent<healthbar>().healthPoints.ToString();
+        ValueTextUpdHealth.text = GameObject.FindWithTag("Player").GetComponent<healthbar>().maxHealthPoints.ToString();
+        ValueTextUpdOxygen.text = GameObject.FindWithTag("Player").GetComponent<oxigenbar>().maxOxigenPoints.ToString();
     }*/
 }

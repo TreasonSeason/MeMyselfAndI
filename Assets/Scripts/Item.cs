@@ -68,6 +68,30 @@ public class Item : MonoBehaviour
             armour.SetActive(true);
             armour.GetComponent<Item>().equipped = true;
         }
+        if (type == "Helmet")
+        {
+            int kint = 50 * (ID - 20);
+            Debug.Log("Helm: ");
+            Debug.Log(kint);
+        }
+        if (type == "Body")
+        {
+            int kint = 50 * (ID - 10);
+            Debug.Log("Body");
+            Debug.Log(kint);
+        }
+        if (type == "Gloves")
+        {
+            int kint = 50 * (ID - 30);
+            Debug.Log("GLov");
+            Debug.Log(kint);
+        }
+        if (type == "Boots")
+        {
+            int kint = 50 * (ID - 40);
+            Debug.Log("boot");
+            Debug.Log(kint);
+        }
         //consumables
         if (type == "Potion")
         {
@@ -91,6 +115,10 @@ public class Item : MonoBehaviour
             player = GameObject.FindWithTag("Player");
             player.GetComponent<oxigenbar>().RestoreOxigen(50);
         }
+    }
+    public void BuyItem(int id)
+    {
+        GameObject.FindWithTag("Player").GetComponent<Inventory>().AddShopItem(id);
     }
 
     public virtual Item GetCopy()

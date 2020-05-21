@@ -13,6 +13,8 @@ TagManager:
   - StatDis
   - Money
   - Bg_Music1
+  - Shop
+  - Bullet
   layers:
   - Default
   - TransparentFX
