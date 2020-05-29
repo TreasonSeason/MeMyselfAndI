@@ -20,12 +20,8 @@ public class PlayerS : MonoBehaviour
         bar.healthPoints = data.healthPoints;
         //int[] iteamIDS = data.itemId;
         inv.realoadInventory(data.itemId);
-<<<<<<< HEAD
         //mon.coins = data.coinsStored;
         mon.ValueTextUpd.text = data.coinsStored.ToString();
-=======
-        mon.coins = data.coinsStored;
->>>>>>> 427ee80464dcd6385bfe3c1e55037d2c17044157
         
        // inv.
     }
