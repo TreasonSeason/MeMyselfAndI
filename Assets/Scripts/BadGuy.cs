@@ -23,7 +23,6 @@ public class BadGuy : MonoBehaviour
     private Animator ani;
     private bool seen = false;
 
-    public LayerMask whatIsBullet;
     //NavMeshAgent nav;
     void Start()
     {
@@ -34,15 +33,7 @@ public class BadGuy : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Collider2D[] bullets = Physics2D.OverlapCircleAll(transform.position, 0.4f, whatIsBullet);
-        if (bullets.Length > 0)
-        {
-            var bul = bullets[0].GetComponent<Bullet>();
-            GetComponent<enemyHealth>().DecreaseHealth(bul.bulletDamage);
-            bul.DestroyTime();
-            Debug.Log("bullet");
-        }
-
+        
         //Debug.Log("Atejo");
         if (Vector3.Distance(transform.position, player.position) < maxRange)
         {
