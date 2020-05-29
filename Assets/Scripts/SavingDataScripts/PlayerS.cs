@@ -6,10 +6,11 @@ public class PlayerS : MonoBehaviour
 {
     public healthbar bar;
     public Inventory inv;
+    public CurrencyPouch mon;
 
     public void SavePlayer()
     {
-        SaveSystem.SavePlayer(bar, inv);
+        SaveSystem.SavePlayer(bar, inv, mon);
     }
 
     public void LoadPlayer()
@@ -19,6 +20,8 @@ public class PlayerS : MonoBehaviour
         bar.healthPoints = data.healthPoints;
         //int[] iteamIDS = data.itemId;
         inv.realoadInventory(data.itemId);
+        //mon.coins = data.coinsStored;
+        mon.ValueTextUpd.text = data.coinsStored.ToString();
         
        // inv.
     }

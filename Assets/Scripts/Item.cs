@@ -70,25 +70,30 @@ public class Item : MonoBehaviour
         }
         if (type == "Helmet")
         {
-            int kint = 50 * (ID - 20);
+            int kint = 75 * (ID - 20)+200;
             Debug.Log("Helm: ");
             Debug.Log(kint);
+            GameObject.FindWithTag("Player").GetComponent<oxigenbar>().maxOxigenPoints = kint;
         }
         if (type == "Body")
         {
-            int kint = 50 * (ID - 10);
+            int kint = 75 * (ID - 10) +200;
+            float kint2 = (float)(0.5 * (ID - 10)+1);
             Debug.Log("Body");
             Debug.Log(kint);
+            GameObject.FindWithTag("Player").GetComponent<healthbar>().maxHealthPoints = kint;
+            GameObject.FindWithTag("Player").GetComponent<MultiplierStats>().resistenceMultiplier = kint2;
         }
         if (type == "Gloves")
         {
-            int kint = 50 * (ID - 30);
+            float kint = (float)(0.5 * (ID - 30)+1);
             Debug.Log("GLov");
             Debug.Log(kint);
+            GameObject.FindWithTag("Player").GetComponent<MultiplierStats>().damageMultiplier = kint;
         }
         if (type == "Boots")
         {
-            int kint = 50 * (ID - 40);
+            int kint = 75 * (ID - 40);
             Debug.Log("boot");
             Debug.Log(kint);
         }

@@ -12,7 +12,7 @@ public class SetVolume : MonoBehaviour
     public Slider slider;
 
     public AudioMixer mixer;
-    void Start()
+    void Awake()
     {
         if (Name == "master")
         {

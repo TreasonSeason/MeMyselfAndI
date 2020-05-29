@@ -11,9 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainSpawn.unity
     guid: d5327898fb0ec39468e92f21d64c07da
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level_Select.unity
     guid: a17650bf6957685419768f6fb86e08f1
+  - enabled: 1
+    path: Assets/Scenes/LS.unity
+    guid: a10bf644ed7e20f4eb4cfc9001bb9e4c
   - enabled: 1
     path: Assets/Scenes/Icey.unity
     guid: 61f8967180fd0254dab70cafe9562ce1
