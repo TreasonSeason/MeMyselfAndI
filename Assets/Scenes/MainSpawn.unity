@@ -6516,6 +6516,36 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3751205880874835719, guid: df01e86a77241044d92dd9bb87295d37,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 309629211}
+    - target: {fileID: 3751205880874835719, guid: df01e86a77241044d92dd9bb87295d37,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Respawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 3751205880953673350, guid: df01e86a77241044d92dd9bb87295d37,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 309629211}
+    - target: {fileID: 3751205880953673350, guid: df01e86a77241044d92dd9bb87295d37,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 3751205881664641391, guid: df01e86a77241044d92dd9bb87295d37,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 309629211}
+    - target: {fileID: 3751205881664641391, guid: df01e86a77241044d92dd9bb87295d37,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadMainSpawn
+      objectReference: {fileID: 0}
     - target: {fileID: 3799775884403353780, guid: df01e86a77241044d92dd9bb87295d37,
         type: 3}
       propertyPath: m_RootOrder
@@ -6940,6 +6970,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8516468208593552404, guid: df01e86a77241044d92dd9bb87295d37,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8516468208614155619, guid: df01e86a77241044d92dd9bb87295d37,
         type: 3}
@@ -7566,6 +7601,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &309629210 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3751205879969451262, guid: df01e86a77241044d92dd9bb87295d37,
+    type: 3}
+  m_PrefabInstance: {fileID: 309629203}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &309629211 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1198222368, guid: df01e86a77241044d92dd9bb87295d37,
+    type: 3}
+  m_PrefabInstance: {fileID: 309629203}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 350801d6b18f31541ba4088f8ab8848f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &310067563
@@ -10831,6 +10884,11 @@ PrefabInstance:
       propertyPath: ratioText
       value: 
       objectReference: {fileID: 309629206}
+    - target: {fileID: 575778287949381462, guid: efc5e4f368b7c5f46b092f1b2bfc338d,
+        type: 3}
+      propertyPath: deathScreen
+      value: 
+      objectReference: {fileID: 309629210}
     - target: {fileID: 575778287949381463, guid: efc5e4f368b7c5f46b092f1b2bfc338d,
         type: 3}
       propertyPath: inventory
@@ -35256,6 +35314,8 @@ MonoBehaviour:
   ratioText: {fileID: 309629206}
   healthPoints: 140
   maxHealthPoints: 200
+  deathScreen: {fileID: 0}
+  player: {fileID: 0}
 --- !u!114 &2068488235
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -43,7 +43,6 @@ public class WaveSpawner : MonoBehaviour
             //check if enemies are alive
             if (!EnemyIsAlive())
             {
-                //Begin new round
                 waveCompleted();
             }
             else return;
@@ -59,6 +58,7 @@ public class WaveSpawner : MonoBehaviour
         }
         else
         {
+            //PRINTINT waveCountdown KINTAMAJI SUAPVALINUS IKI VIENO SKAICIAUS PO NULIO --------------------------------------------------------------------------
             waveCountdown -= Time.deltaTime;
         }
     }
@@ -72,10 +72,16 @@ public class WaveSpawner : MonoBehaviour
         if (nextWave + 1 > waves.Length - 1)
         {
             nextWave = 0;
+            //BAIGESI VISOS BANGOS- ------------------------------------------------------------------------------------------------
+            //Victory screen + nauja planeta atrakinta
             Debug.Log("All waves completed, looping...");
         }
         else
+        {
             nextWave++;
+            //NAUJAS ROUNDAS ------------------------------------------------------------------------------
+        }
+
     }
 
     private bool EnemyIsAlive()
@@ -95,6 +101,7 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator spawnWave(Wave _wave)
     {
+        //NAUJA BANGA PRASIDEDA _wave.name YRA BANGOS PAVADINIMAS JEIGU NORESI JOS PAVADINIMA  NAUDOT ----------------------------------------------
         Debug.Log("Spawning wave" + _wave.name);
         state = SpawnState.SPAWNING;
 

@@ -20,6 +20,9 @@ public class Nemis : MonoBehaviour
         ani = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        gameObject.GetComponent<EnemyAI>().follow = true;
+        seen = true;
     }
 
     // Update is called once per frame
@@ -33,39 +36,22 @@ public class Nemis : MonoBehaviour
 
     private void followCheck()
     {
-        if (Vector3.Distance(transform.position, player.position) < maxRange)
-        {
-            Vector3 a1 = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-            Vector3 a2 = player.position;
-            RaycastHit2D h = Physics2D.Linecast(a1, a2);
-            if (h.collider != null)
-                if (h.collider.tag == "Player")
+        Vector3 a1 = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        Vector3 a2 = player.position;
+        RaycastHit2D h = Physics2D.Linecast(a1, a2);
+        if (h.collider != null)
+            if (h.collider.tag == "Player")
+            {
+                if (!seen)
                 {
-                    if (!seen)
-                    {
-                        seen = true;
-                        gameObject.GetComponent<EnemyAI>().follow = true;
-                        //ani.SetTrigger("spot");
-                    }
-                    //Shoot();
-                    //flip();
+                    seen = true;
                 }
-
-
-        }
-        else
-        {
-            gameObject.GetComponent<EnemyAI>().follow = false;
-            seen = false;
-        }
+            }
+            else seen = false;
         if (Vector3.Distance(transform.position, player.position) < minRange && seen)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, -1 * avoidenceSpeed * Time.deltaTime);
         }
-        //if (Vector3.Distance(transform.position, player.position) < minRange - 2)
-        //{
-        //    //transform.position = Vector2.MoveTowards(transform.position, player.position, -1 * avoidenceSpeed * Time.deltaTime);
-        //}
     }
 
     private void Shoot()

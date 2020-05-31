@@ -28,38 +28,48 @@ public class BadGuy : MonoBehaviour
     {
         ani = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        gameObject.GetComponent<EnemyAI>().follow = true;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        
+
+        AimAt(player.position);
+        if (!seen)
+        {
+            seen = true;
+            gameObject.GetComponent<EnemyAI>().follow = true;
+            ani.SetTrigger("spot");
+        }
+        flip();
+
         //Debug.Log("Atejo");
-        if (Vector3.Distance(transform.position, player.position) < maxRange)
-        {
-            Vector3 a1 = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-            Vector3 a2 = player.position;
-            RaycastHit2D h = Physics2D.Linecast(a1, a2);
+        //if (Vector3.Distance(transform.position, player.position) < maxRange)
+        //{
+        //    Vector3 a1 = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        //    Vector3 a2 = player.position;
+        //    RaycastHit2D h = Physics2D.Linecast(a1, a2);
 
-            if (h.collider.tag == "Player")
-            {
-                AimAt(player.position);
-                if (!seen)
-                {
-                    seen = true;
-                    gameObject.GetComponent<EnemyAI>().follow = true;
-                    ani.SetTrigger("spot");
-                }
-                flip();
-            }
+        //    if (h.collider.tag == "Player")
+        //    {
+        //        AimAt(player.position);
+        //        if (!seen)
+        //        {
+        //            seen = true;
+        //            gameObject.GetComponent<EnemyAI>().follow = true;
+        //            ani.SetTrigger("spot");
+        //        }
+        //        flip();
+        //    }
 
 
-        }
-        else
-        {
-            gameObject.GetComponent<EnemyAI>().follow = false;
-            seen = false;
-        }
+        //}
+        //else
+        //{
+        //    gameObject.GetComponent<EnemyAI>().follow = false;
+        //    seen = false;
+        //}
     }
 
     public void AimAt(Vector2 target)
@@ -85,6 +95,7 @@ public class BadGuy : MonoBehaviour
         enemy.GetComponent<healthbar>().TakeDamage(attackDamage);
         ani.SetTrigger("swing");
         FindObjectOfType<AudioManager>().Play("Woosh");
+        FindObjectOfType<AudioManager>().Play("Hit");
     }
     void AttackDelay()
     {

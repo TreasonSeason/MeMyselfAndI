@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2654247344455028125}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BarrelPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2654247345845865279}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RayCastEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,9 +75,9 @@ GameObject:
   - component: {fileID: 2654247345854368665}
   - component: {fileID: 2654247345854368664}
   - component: {fileID: -8353379345175158021}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Turret1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -322,6 +322,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Healthbar
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245036355275861196, guid: cd91871481160bc42bfd3850f9b1a70f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd91871481160bc42bfd3850f9b1a70f, type: 3}

@@ -19,9 +19,11 @@ public class LevelLoader : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && PlayerInTheZone)
         {
             //  player.SavePlayer();
+          //  FindObjectOfType<AudioManager>().Play("Spawn");
             Application.LoadLevel(leveltoLoad);
-           // this.GetComponent<PlayerS>().LoadPlayer();
-           // GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerS>().LoadPlayer();
+         //   FindObjectOfType<AudioManager>().Play("Spawn");
+            // this.GetComponent<PlayerS>().LoadPlayer();
+            // GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerS>().LoadPlayer();
             //  player.LoadPlayer();
         }
     }

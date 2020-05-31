@@ -28,7 +28,7 @@ public class Ghost : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Physics2D.IgnoreLayerCollision(10, 11);
+        Physics2D.IgnoreLayerCollision(11, 12);
 
         if(eH.health == eH.getMaxHealth())
         {

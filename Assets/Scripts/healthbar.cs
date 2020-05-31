@@ -12,6 +12,9 @@ public class healthbar : MonoBehaviour
     public float healthPoints = 160;
     public float maxHealthPoints = 200;
     private MultiplierStats multiS;
+    public GameObject deathScreen;
+    public GameObject player;
+
 
     void Start()
     {
@@ -30,12 +33,18 @@ public class healthbar : MonoBehaviour
     }
     public void TakeDamage(float damage)
     {
+       // FindObjectOfType<AudioManager>().Play("Hit");
         float resistence = 1 / multiS.resistenceMultiplier;
         healthPoints -= damage * resistence;
         if (healthPoints <= 0)
         {
             healthPoints = 0;
-            SceneManager.LoadScene("MainSpawn");
+            // SceneManager.LoadScene("MainSpawn");
+            
+            deathScreen.SetActive(true);
+            Destroy(player);
+            FindObjectOfType<AudioManager>().Play("Spawn");
+            Time.timeScale = 0;
             Debug.Log("Dead!");
         }
         FixedUpdate();
