@@ -398,6 +398,8 @@ MonoBehaviour:
   weapon: {fileID: 575778287805043485}
   mainCamera: {fileID: 0}
   bullet: {fileID: 1713154824227157459, guid: 8fc27d01d406b914a891c8afa7c7f6ec, type: 3}
+  FrostBullet: {fileID: 291259941252008421, guid: e821213b0b1e2c64d8c4fa7959e8181a,
+    type: 3}
   demageScale: 1
   attackRange: 0.6
   whatisEnemy:
@@ -425,6 +427,8 @@ MonoBehaviour:
   ratioText: {fileID: 0}
   healthPoints: 140
   maxHealthPoints: 200
+  deathScreen: {fileID: 0}
+  player: {fileID: 575778287949381482}
 --- !u!114 &575778287949381463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,6 +477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bar: {fileID: 575778287949381462}
   inv: {fileID: 575778287949381463}
+  mon: {fileID: 0}
 --- !u!70 &575778287949381459
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -717,6 +722,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageMultiplier: 1
   resistenceMultiplier: 1
+  hasSword: 0
+  swordSprite: {fileID: 0}
+  swordColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &575778288216841003
 GameObject:
   m_ObjectHideFlags: 0

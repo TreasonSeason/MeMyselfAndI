@@ -116,3 +116,23 @@ MonoBehaviour:
     mixerGroup: {fileID: -4534604449076420508, guid: e668961df1df6c84a8bf0594863a216c,
       type: 2}
     source: {fileID: 0}
+  - name: Spawn
+    clip: {fileID: 8300000, guid: 15d8b93e7ad4bc34b873cfc660af06f0, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -4534604449076420508, guid: e668961df1df6c84a8bf0594863a216c,
+      type: 2}
+    source: {fileID: 0}
+  - name: Hit
+    clip: {fileID: 8300000, guid: 7a1c1975271a083429d4dfe533d847f7, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -4534604449076420508, guid: e668961df1df6c84a8bf0594863a216c,
+      type: 2}
+    source: {fileID: 0}

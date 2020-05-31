@@ -32,8 +32,8 @@ public class enemyHealth : MonoBehaviour
         health -= amount;
         if (health <= 0)
         {
-            dropLoot();
             Object.Destroy(gameObject);
+            dropLoot();
             return;
         }
         shake = true;
@@ -58,7 +58,10 @@ public class enemyHealth : MonoBehaviour
     }
     private void dropLoot()
     {
-        int random = (int)Random.Range(0f, lootDrop.Length);
-        GameObject newDrop = Instantiate(lootDrop[random], transform.position, transform.rotation);
+        if (lootDrop.Length > 0)
+        {
+            int random = (int)Random.Range(0f, lootDrop.Length);
+            GameObject newDrop = Instantiate(lootDrop[random], transform.position, transform.rotation);
+        }
     }
 }

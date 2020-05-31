@@ -26,6 +26,7 @@ public class ShopSlot : MonoBehaviour, IPointerClickHandler
     }
     public void UpdateSlot()
     {
+        Start();
         slotIconGO.GetComponent<Image>().sprite = icon;
     }
     public void UseItem()

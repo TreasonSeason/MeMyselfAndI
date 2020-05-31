@@ -40,21 +40,25 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             enemyHealth temp = collision.gameObject.GetComponent<enemyHealth>();
+            FindObjectOfType<AudioManager>().Play("Hit");
             DestroyTime();
             temp.DecreaseHealth(bulletDamage);
         }
         else if (collision.gameObject.tag == "Player")
         {
             healthbar temp = collision.gameObject.GetComponent<healthbar>();
+            FindObjectOfType<AudioManager>().Play("Hit");
             DestroyTime();
             temp.TakeDamage(bulletDamage);
         }
         else if (collision.gameObject.tag == "World" && shot)
         {
+           // FindObjectOfType<AudioManager>().Play("Hit");
             DestroyTime();
         }
         else if (collision.gameObject.tag == "Bullet" && shot)
         {
+            FindObjectOfType<AudioManager>().Play("Hit");
             DestroyTime();
         }
     }
