@@ -6,14 +6,20 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool IsGamePaused = false;
     public static bool isSettingsOpen = false;
+    public static bool isCreditsOpen = false;
     public GameObject PauseMenuUI;
     public GameObject SettingsMenuUi;
+    public GameObject Credits;
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (IsGamePaused && isSettingsOpen == false)
+            if (isCreditsOpen == true)
+            {
+                CloseCredits();
+            }
+            else if (IsGamePaused && isSettingsOpen == false)
             {
                 Resume();
             }
@@ -59,7 +65,26 @@ public class PauseMenu : MonoBehaviour
             isSettingsOpen = false;
         }
     }
-
+    public void OpenCredits()
+    {
+        if (isCreditsOpen == false)
+        {
+            Credits.SetActive(true);
+            PauseMenuUI.SetActive(false);
+            IsGamePaused = false;
+            isCreditsOpen = true;
+        }
+    }
+    public void CloseCredits()
+    {
+        if (isCreditsOpen == true)
+        {
+            Credits.SetActive(false);
+            PauseMenuUI.SetActive(true);
+            IsGamePaused = true;
+            isCreditsOpen = false;
+        }
+    }
 
    public void LoadMenu()
     {
