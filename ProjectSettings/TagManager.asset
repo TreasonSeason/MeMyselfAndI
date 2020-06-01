@@ -15,6 +15,7 @@ TagManager:
   - Bg_Music1
   - Shop
   - Bullet
+  - LoadSpot
   layers:
   - Default
   - TransparentFX
