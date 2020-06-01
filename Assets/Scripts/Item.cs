@@ -71,31 +71,28 @@ public class Item : MonoBehaviour
         if (type == "Helmet")
         {
             int kint = 75 * (ID - 20)+200;
-            Debug.Log("Helm: ");
-            Debug.Log(kint);
             GameObject.FindWithTag("Player").GetComponent<oxigenbar>().maxOxigenPoints = kint;
+            GameObject.FindWithTag("Player").GetComponent<Inventory>().AddSpecialItem(ID,0);
+
         }
         if (type == "Body")
         {
             int kint = 75 * (ID - 10) +200;
             float kint2 = (float)(0.5 * (ID - 10)+1);
-            Debug.Log("Body");
-            Debug.Log(kint);
             GameObject.FindWithTag("Player").GetComponent<healthbar>().maxHealthPoints = kint;
             GameObject.FindWithTag("Player").GetComponent<MultiplierStats>().resistenceMultiplier = kint2;
+            GameObject.FindWithTag("Player").GetComponent<Inventory>().AddSpecialItem(ID, 1);
         }
         if (type == "Gloves")
         {
             float kint = (float)(0.5 * (ID - 30)+1);
-            Debug.Log("GLov");
-            Debug.Log(kint);
             GameObject.FindWithTag("Player").GetComponent<MultiplierStats>().damageMultiplier = kint;
+            GameObject.FindWithTag("Player").GetComponent<Inventory>().AddSpecialItem(ID, 2);
         }
         if (type == "Boots")
         {
             int kint = 75 * (ID - 40);
-            Debug.Log("boot");
-            Debug.Log(kint);
+            GameObject.FindWithTag("Player").GetComponent<Inventory>().AddSpecialItem(ID, 3);
         }
         //consumables
         if (type == "Potion")

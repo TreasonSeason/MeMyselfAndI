@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3237426398741428669}
   m_Layer: 0
   m_Name: LoadSpot
-  m_TagString: Untagged
+  m_TagString: LoadSpot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -256,3 +256,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bar: {fileID: 0}
   inv: {fileID: 0}
+  mon: {fileID: 0}
