@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5386581833063433978}
   - component: {fileID: 5386581833063433977}
   - component: {fileID: 5386581833063433979}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Frost
   m_TagString: Pickable
   m_Icon: {fileID: 0}

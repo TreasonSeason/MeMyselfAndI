@@ -40,7 +40,7 @@ public class healthbar : MonoBehaviour
         {
             healthPoints = 0;
             // SceneManager.LoadScene("MainSpawn");
-            
+            GameObject.FindWithTag("Player").GetComponent<Inventory>().inventory.SetActive(false);
             deathScreen.SetActive(true);
             Destroy(player);
             FindObjectOfType<AudioManager>().Play("Spawn");

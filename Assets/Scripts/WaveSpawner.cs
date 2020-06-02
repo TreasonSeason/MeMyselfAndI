@@ -15,17 +15,33 @@ public class WaveSpawner : MonoBehaviour
         public float rate;
     }
 
+    public GameObject VictoryScreen;
     public Wave[] waves;
+    //TextMeshProUGUI VictoryText;
     private int nextWave = 0;
+
+    public int NextWave
+    {
+        get { return nextWave+1; }
+    }
 
     public Transform[] spawnpoints;
 
     public float timeBetweenWaves = 5f;
     private float waveCountdown;
 
+    public float WaveCountdown
+    {
+        get { return waveCountdown+1; }
+    }
+
     private float searchCountdown = 1f;
 
     private SpawnState state = SpawnState.COUNTING;
+    public SpawnState State
+    {
+        get{ return state; }
+    }
 
     private void Start()
     {
@@ -71,10 +87,22 @@ public class WaveSpawner : MonoBehaviour
         waveCountdown = timeBetweenWaves;
         if (nextWave + 1 > waves.Length - 1)
         {
-            nextWave = 0;
+            //nextWave = 0;
+            VictoryScreen.SetActive(true);
+           // Destroy(player);
+          //  FindObjectOfType<AudioManager>().Play("Spawn");
+            Time.timeScale = 0;
+            //if (SceneManager.GetActiveScene().buildIndex < 7)
+            //{
+            //    VictoryText.text = "new planet unlocked";
+            //}
+            //else if (SceneManager.GetActiveScene().buildIndex = 7)
+            //{
+            //    VictoryText.text = "you have ";
+            //}
             //BAIGESI VISOS BANGOS- ------------------------------------------------------------------------------------------------
             //Victory screen + nauja planeta atrakinta
-            Debug.Log("All waves completed, looping...");
+            Debug.Log("All waves completed, looping NOT...");
         }
         else
         {

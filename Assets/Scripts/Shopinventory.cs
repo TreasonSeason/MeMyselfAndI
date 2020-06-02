@@ -29,7 +29,7 @@ public class Shopinventory : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.M) && inside)
+        if (Input.GetKeyDown(KeyCode.E) && inside)
             inventoryEnabled = !inventoryEnabled;
         if (inventoryEnabled == true)
         {

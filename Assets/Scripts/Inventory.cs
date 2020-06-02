@@ -67,7 +67,7 @@ public class Inventory : MonoBehaviour
         }
         else
         {
-            for (int i = 0; i < allSlots; i++)
+            for (int i = 0; i < allSlots-4; i++)
             {
                 if (slot[i].GetComponent<Slot>().empty)
                 {
@@ -148,10 +148,11 @@ public class Inventory : MonoBehaviour
         CurrencyPouch kint = GameObject.FindWithTag("Money").GetComponent<CurrencyPouch>();
         int coins = int.Parse(kint.ValueTextUpd.text);
         int kaina = PriceCheck(itemId);
+        Debug.Log("Kaina: " + kaina);
         //
         if (coins >= kaina)
         {
-            for (int i = 0; i < allSlots; i++)
+            for (int i = 0; i < allSlots-4; i++)
             {
                 if (slot[i].GetComponent<Slot>().empty)
                 {
@@ -170,13 +171,51 @@ public class Inventory : MonoBehaviour
         else return;
 
     }
+    public void AddSpecialItem(int itemId, int nr)
+    {
+        int i = allSlots - 4 + nr;
+        if (slot[i].GetComponent<Slot>().ID == itemId)
+        {
+            slot[i].GetComponent<Slot>().icon = null;
+            slot[i].GetComponent<Slot>().ID = 0;
+            slot[i].GetComponent<Slot>().type = null;
+            slot[i].GetComponent<Slot>().description = null;
+            slot[i].GetComponent<Slot>().UpdateSlot();
+            slot[i].GetComponent<Slot>().empty = true;
+            if (nr == 0) GameObject.FindWithTag("Player").GetComponent<oxigenbar>().maxOxigenPoints = 200;
+            if (nr == 1) GameObject.FindWithTag("Player").GetComponent<MultiplierStats>().resistenceMultiplier = 1;
+            if (nr == 1) GameObject.FindWithTag("Player").GetComponent<healthbar>().maxHealthPoints = 200;
+            if (nr == 2) GameObject.FindWithTag("Player").GetComponent<MultiplierStats>().damageMultiplier = 1;
+        }
+        else
+        {
+        slot[i].GetComponent<Slot>().icon = ItemDataBase.GetItemCopy(itemId).icon;
+        slot[i].GetComponent<Slot>().ID = ItemDataBase.GetItemCopy(itemId).ID;
+        slot[i].GetComponent<Slot>().type = ItemDataBase.GetItemCopy(itemId).type;
+        slot[i].GetComponent<Slot>().description = ItemDataBase.GetItemCopy(itemId).description;
+        slot[i].GetComponent<Slot>().UpdateSlot();
+        slot[i].GetComponent<Slot>().empty = false;
+        }
+    }
     public int PriceCheck(int id)
     {
         int[] prices = new int[100];
-        for(int i=0; i<100; i++)
-        {
-            prices[i] = 50;
-        }
+        prices[11] = 50;
+        prices[21] = 50;
+        prices[31] = 50;
+        prices[41] = 50;
+        prices[12] = 120;
+        prices[22] = 120;
+        prices[32] = 120;
+        prices[42] = 120;
+        prices[13] = 250;
+        prices[23] = 250;
+        prices[33] = 250;
+        prices[43] = 250;
+        prices[14] = 500;
+        prices[24] = 500;
+        prices[34] = 500;
+        prices[44] = 500;
         int price = 1000;
         price = prices[id];
         return price;
