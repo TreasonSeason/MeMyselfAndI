@@ -204,6 +204,7 @@ public class Inventory : MonoBehaviour
         prices[21] = 50;
         prices[31] = 50;
         prices[41] = 50;
+<<<<<<< HEAD
         prices[12] = 120;
         prices[22] = 120;
         prices[32] = 120;
@@ -216,6 +217,20 @@ public class Inventory : MonoBehaviour
         prices[24] = 500;
         prices[34] = 500;
         prices[44] = 500;
+=======
+        prices[11] = 120;
+        prices[21] = 120;
+        prices[31] = 120;
+        prices[41] = 120;
+        prices[11] = 250;
+        prices[21] = 250;
+        prices[31] = 250;
+        prices[41] = 250;
+        prices[11] = 500;
+        prices[21] = 500;
+        prices[31] = 500;
+        prices[41] = 500;
+>>>>>>> c6edc69adcfae68174e2fc76f63491c956fbd8f8
         int price = 1000;
         price = prices[id];
         return price;
