@@ -118,9 +118,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shot: 0
-  bulletDamage: 15
-  bulletSpeed: 20
-  despawnTime: 5
+  bulletDamage: 10
+  bulletSpeed: 7
+  despawnTime: 1
 --- !u!70 &3228424927786062668
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

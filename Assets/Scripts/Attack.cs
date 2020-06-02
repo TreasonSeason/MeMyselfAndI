@@ -10,6 +10,8 @@ public class Attack : MonoBehaviour
     public Camera mainCamera;
     public GameObject bullet;
     public GameObject FrostBullet;
+    public GameObject ShotgunBullet;
+    public GameObject smgBullet;
     private int fireMode = 0;
     private Vector3 LastMousePos;
     public float demageScale = 1;
@@ -20,13 +22,15 @@ public class Attack : MonoBehaviour
     public float attackDelay = 0.3f;
     private bool canAttack = true;
 
-    public Transform flameSpawn;
-    public float flameRange = 2f;
-    public float flameDamage = 1f;
-    public GameObject flame;
-    private bool dega = false;
-    private bool isBurning = false;
-    
+    public float shotgunBulletCount = 3f;
+
+    //public Transform flameSpawn;
+    //public float flameRange = 2f;
+    //public float flameDamage = 1f;
+    //public GameObject flame;
+    //private bool dega = false;
+    //private bool isBurning = false;
+
     private MultiplierStats multiScript;
     void Start()
     {
@@ -39,14 +43,15 @@ public class Attack : MonoBehaviour
     {
         AimAt(mainCamera.ScreenToWorldPoint(Input.mousePosition), ts);
 
-        if (dega)
-            Burn();
+        //if (dega)
+        //    Burn();
         //Cia dar kazkas?
 
     }
 
     private void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.Alpha1) && GetComponent<MultiplierStats>().hasSword)
         {
             fireMode = 2;
@@ -54,41 +59,20 @@ public class Attack : MonoBehaviour
             weapon.GetComponent<SpriteRenderer>().color = multiScript.swordColor;
         }
         if (fireMode == 1)
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && canAttack)
                 Shoot(bullet);
         if (fireMode == 2)
             if (Input.GetMouseButtonDown(0) && canAttack)
                 Swing();
-        //if (fireMode == 3)
-        //{
-        //    AimAt(mainCamera.ScreenToWorldPoint(Input.mousePosition), flameSpawn);
-        //    if (Input.GetMouseButton(0))
-        //    {
-        //        dega = true;
-        //        if (isBurning == false)
-        //        {
-        //            GameObject fire = Instantiate(flame, ts.position, flameSpawn.rotation);
-        //            fire.GetComponent<Rigidbody2D>().MovePosition(ts.position);
-        //            fire.GetComponent<Transform>().position = flameSpawn.position;
-        //            isBurning = true;
-        //        }
-        //    }
-        //    if (Input.GetMouseButtonUp(0))
-        //    {
-        //        dega = false;
-        //        isBurning = false;
-        //    }
-
-        //}
-        if (fireMode == 3)
-        {
-            AimAt(mainCamera.ScreenToWorldPoint(Input.mousePosition), flameSpawn);
-            if (Input.GetMouseButtonDown(0))
-                Burn();
-        }
-        if(fireMode == 4)
-            if (Input.GetMouseButtonDown(0))
+        if (fireMode == 4)
+            if (Input.GetMouseButtonDown(0) && canAttack)
                 Shoot(FrostBullet);
+        if (fireMode == 5)
+            if (Input.GetMouseButtonDown(0) && canAttack)
+                ShootShotgun(ShotgunBullet);
+        if (fireMode == 6)
+            if (Input.GetMouseButton(0) && canAttack)
+                ShootSmg(smgBullet);
     }
     void swordDelay()
     {
@@ -96,8 +80,38 @@ public class Attack : MonoBehaviour
         weapon.GetComponent<Transform>().Rotate(0, 0, 30);
     }
 
+    public void ShootSmg(GameObject bull)
+    {
+        canAttack = false;
+        Invoke("shotDelay", 0.13f);
+        GameObject newbullet = Instantiate(bull, ts.position, ts.rotation);
+        newbullet.GetComponent<Bullet>().Bullet1();
+        newbullet.GetComponent<Bullet>().bulletDamage *= multiScript.damageMultiplier;
+        FindObjectOfType<AudioManager>().Play("Laser_Shot1");
+    }
+
+    public void ShootShotgun(GameObject bull)
+    {
+        canAttack = false;
+        Invoke("shotDelay", attackDelay);
+        for (int i = 0; i < shotgunBulletCount; i++)
+        {
+            GameObject newbullet = Instantiate(bull, ts.position, ts.rotation);
+            newbullet.transform.Rotate(0, 0, Random.Range(-10, 10));
+            newbullet.GetComponent<Bullet>().Bullet1();
+            newbullet.GetComponent<Bullet>().bulletDamage *= multiScript.damageMultiplier;
+        }
+        FindObjectOfType<AudioManager>().Play("shotgun");
+    }
+    private void shotDelay()
+    {
+        canAttack = true;
+    }
+
     public void Shoot(GameObject bull)
     {
+        canAttack = false;
+        Invoke("shotDelay", 0.15f);
         GameObject newbullet = Instantiate(bull, ts.position, ts.rotation);
         newbullet.GetComponent<Bullet>().Bullet1();
         newbullet.GetComponent<Bullet>().bulletDamage *= multiScript.damageMultiplier;
@@ -117,27 +131,6 @@ public class Attack : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("SwordSwash");
     }
 
-    public void Burn()
-    {
-        if (dega)
-        {
-            //var buvo = flameSpawn.position;
-            //GameObject fire = Instantiate(flame, ts.position, flameSpawn.rotation);
-            //fire.GetComponent<DestroyScript>().Kill();
-            Collider2D[] enemies = Physics2D.OverlapCapsuleAll(flameSpawn.position, new Vector2(1f, 1.1f), CapsuleDirection2D.Vertical, flameSpawn.rotation.z);
-            for (int i = 0; i < enemies.Length; i++)
-            {
-                enemies[i].GetComponent<enemyHealth>().DecreaseHealth(flameDamage);
-            }
-        }
-
-        //private Vector2 Knockback(Vector2 target)
-        //{
-        //    return new Vector2(transform.position.x - target.x, transform.position.y - target.y);
-
-        //}
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Pickable")
@@ -145,7 +138,10 @@ public class Attack : MonoBehaviour
             weapon.GetComponent<SpriteRenderer>().sprite = collision.gameObject.GetComponent<SpriteRenderer>().sprite;
             weapon.GetComponent<SpriteRenderer>().color = collision.gameObject.GetComponent<SpriteRenderer>().color;
             if (collision.gameObject.name.Contains("semiFire"))
+            {
                 fireMode = 1;
+                Destroy(collision.gameObject);
+            }
             if (collision.gameObject.name.Contains("sword"))
             {
                 fireMode = 2;
@@ -154,11 +150,25 @@ public class Attack : MonoBehaviour
                 gameObject.GetComponent<MultiplierStats>().swordColor = collision.gameObject.GetComponent<SpriteRenderer>().color;
                 Destroy(collision.gameObject);
             }
-               
-            if (collision.gameObject.name.Contains("Flame"))
-                fireMode = 3;
+
+            //if (collision.gameObject.name.Contains("Flame"))
+            //    fireMode = 3;
             if (collision.gameObject.name.Contains("Frost"))
+            {
                 fireMode = 4;
+                Destroy(collision.gameObject);
+            }
+
+            if (collision.gameObject.name.Contains("Shotgun"))
+            {
+                fireMode = 5;
+                Destroy(collision.gameObject);
+            }
+            if (collision.gameObject.name.Contains("smg"))
+            {
+                fireMode = 6;
+                Destroy(collision.gameObject);
+            }
         }
     }
 

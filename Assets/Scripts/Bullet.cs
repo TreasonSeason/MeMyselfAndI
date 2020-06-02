@@ -19,9 +19,10 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        Physics2D.IgnoreLayerCollision(9, 13);
+        Physics2D.IgnoreLayerCollision(9, 9);
         Vector2 a = gameObject.transform.up;
         rb.MovePosition(rb.position + a * bulletSpeed * Time.fixedDeltaTime);
-        //Physics2D.IgnoreLayerCollision(8, 9);
     }
     public void DestroyTime()
     {

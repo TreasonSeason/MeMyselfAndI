@@ -148,6 +148,7 @@ public class Inventory : MonoBehaviour
         CurrencyPouch kint = GameObject.FindWithTag("Money").GetComponent<CurrencyPouch>();
         int coins = int.Parse(kint.ValueTextUpd.text);
         int kaina = PriceCheck(itemId);
+        Debug.Log("Kaina: " + kaina);
         //
         if (coins >= kaina)
         {
@@ -203,18 +204,18 @@ public class Inventory : MonoBehaviour
         prices[21] = 50;
         prices[31] = 50;
         prices[41] = 50;
-        prices[11] = 120;
-        prices[21] = 120;
-        prices[31] = 120;
-        prices[41] = 120;
-        prices[11] = 250;
-        prices[21] = 250;
-        prices[31] = 250;
-        prices[41] = 250;
-        prices[11] = 500;
-        prices[21] = 500;
-        prices[31] = 500;
-        prices[41] = 500;
+        prices[12] = 120;
+        prices[22] = 120;
+        prices[32] = 120;
+        prices[42] = 120;
+        prices[13] = 250;
+        prices[23] = 250;
+        prices[33] = 250;
+        prices[43] = 250;
+        prices[14] = 500;
+        prices[24] = 500;
+        prices[34] = 500;
+        prices[44] = 500;
         int price = 1000;
         price = prices[id];
         return price;

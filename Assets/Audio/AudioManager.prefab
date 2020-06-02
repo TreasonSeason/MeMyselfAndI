@@ -136,3 +136,13 @@ MonoBehaviour:
     mixerGroup: {fileID: -4534604449076420508, guid: e668961df1df6c84a8bf0594863a216c,
       type: 2}
     source: {fileID: 0}
+  - name: shotgun
+    clip: {fileID: 8300000, guid: 7a01ee320684b4a4396face84e034ccb, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -4534604449076420508, guid: e668961df1df6c84a8bf0594863a216c,
+      type: 2}
+    source: {fileID: 0}
